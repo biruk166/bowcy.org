@@ -1,0 +1,103 @@
+/* file-name: option.css
+   discription: this css file will be used to style the two navigation linkes on the page
+                WHO ARE WE and DIGITAL LIBRARY. if you go to on each of the navigation link jsx file
+                you will find this css file being used to style the components*/
+
+                
+
+/* contains the nav menu items sub menu ex-> WHO ARW WE? , DIGITAL LIBRARY */
+.who-arewe-container{
+    width: max-content;
+}
+
+/* options items are the options that will get displayed 
+nav item is the navigation item that will contain the option items ex
+WHO ARE WE? contains [VISON, MISSION, VALUES, ETC] */
+.option-items,
+.nav-items{
+    color: var(--textBlue);
+    font-size: 2rem;
+    cursor: pointer;
+    font-family: var(---btnFontStyleOxReg);
+}
+
+.nav-items{
+    border: none;
+    background-color: transparent;
+    border-left:solid transparent .3rem;
+}
+
+.option-items{
+    display: none;
+    padding: 1em 10em 1em 1em;
+    margin-top: 0;
+    border-radius: 0 0 1rem 1rem;
+    overflow: hidden;
+    position: relative;
+    background-color: var(--optionMenuItem);
+}
+
+/* animating the drop down of each menu item of sub menu item */
+@keyframes option-animation {
+    from{
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: transform 50ms ease-in-out;
+    }
+    to{
+        transform: scaleY(1);
+    }
+}
+
+/* show sub menu items when the user is on focus or clicking the appropriate navigation link */
+.nav-items:focus + .option-items{
+    display: block;
+    animation: option-animation 300ms ease-in-out 1 none;
+}
+.nav-items:focus{
+    border-left:solid black .3rem;
+}
+
+/* each option items contain a link tag inside li tag */
+.option-items > li{
+    margin-top: 1em;
+    position: relative;
+    background-color: transparent;
+    z-index: 1;
+}
+
+/* before element that will be used to animate hover effect on each option items */
+.option-items > li::before{
+    content: '';
+    display: block;
+    position: absolute;
+    padding: .7em;
+    z-index: -1;
+    top: -0.8rem;
+    bottom: -0.8rem;
+    left: -0.8rem;
+    right: -5em;
+    background-color: var(--txtYellow);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 200ms ease-in-out;
+    
+}
+
+/* when user hovers on each option items the :before tag will expand and its yellow background will be displayed */
+.option-items > li:hover::before{
+    transform: scaleX(2);
+    border-left:solid black .2rem ;
+}
+
+/* since option items have padding it will push them down a little
+this causes the first option item to be pushed way down from its parent naviagtion item
+so elminate margine on only this first option item */
+.option-items :nth-child(1){
+    margin-top: 0 !important;
+}
+
+
+a{
+    color: var(--textBlue);
+}

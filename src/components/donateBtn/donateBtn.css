@@ -1,0 +1,12 @@
+.donate-btn{
+    font-size: 2rem;
+    padding: .5em 1.5em;
+    border-radius: 1em;
+    background-color: var(--btnYellow);
+    color: var(--btnBlue);
+    font-family: var(---btnFontStyleOxReg);
+    font-weight: bolder;
+    border: none;
+}
+
+ 

@@ -1,1 +1,44 @@
 
+html{
+    font-size: 62.5%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+button{
+    cursor: pointer;
+}
+:root{
+     /* ########### color for Text, Bg, Button, Button text #########*/
+     --navBarColor: black;
+     --navBarWhite: white;
+     --ftrBarYellow: #FFD601;
+     --optionMenuItem: #f8f6f6;
+    
+     --introCardClrDrkBlue:#041E43;
+     --introCardClrYellow: #FFD601;
+     
+     --txtYellow: #FFD601;
+     --txtWhite: white;
+     --txtBlack: black;
+     --textBlue: #18277C;
+     --txtBlueLowOpacity: #041E43;
+     --textRed: red;
+
+     --btnYellow: #FFD601;
+     --btnBlack: black;
+     --btnBlue: #18277C;
+     --deleteBtn:#ACB4E0;
+
+    --txtBoxBg: #EEEBEB;
+
+    /* ############### Font ############# */
+    ---btnFontStyleOxReg: 'Oxanium', cursive;
+    
+}

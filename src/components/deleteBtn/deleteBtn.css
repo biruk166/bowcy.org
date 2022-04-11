@@ -1,0 +1,10 @@
+.delete-btn{
+    font-size: 2rem;
+    padding: .5em 1.5em;
+    border-radius: 1em;
+    background-color: var(--deleteBtn);
+    color: var(--textRed);
+    font-family: var(---btnFontStyleOxReg);
+    font-weight: bolder;
+    border: none;
+}

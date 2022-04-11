@@ -1,0 +1,39 @@
+.intro-card-container{
+    background-color: var(--introCardClrDrkBlue);
+    width: 28rem;
+    height: 40rem;
+    padding: 2em;
+    border-radius: 1.5em;
+    text-overflow: clip;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.intro-card-img-container{
+    width: inherit;
+    text-align: center;
+}
+
+.intro-card-image{
+    width: 20rem;
+    border-radius: 20em;
+}
+.title{
+    color: var(--txtYellow);
+    font-family: var(---btnFontStyleOxReg);
+    font-size: 2em;
+}
+
+.intro-article-container{
+    width: inherit;
+    padding: 2%;
+    text-align: center;
+}
+
+.intro-article{
+    color: var(--txtWhite);
+    font-family: var(---btnFontStyleOxReg);
+    font-size: 1.5em;
+}
