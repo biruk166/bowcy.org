@@ -1,0 +1,73 @@
+.all-container{
+    display: flex;
+    justify-content: center;
+}
+.our-org-container{
+    display: flex;
+    flex-wrap: nowrap;
+    width: max-content;
+    height: min-content;
+    padding: 1em;
+    margin-top: 2rem;
+    background-color: beige;
+    color: var(--textBlue);
+    font-family: var(---btnFontStyleOxReg);
+}
+
+.building-img-container{
+    width: 47rem;
+    height: 100%;
+    grid-area: one three;
+}
+.building-img{
+    width: inherit;
+    height: inherit;
+}
+
+.list-of-organization-cont{
+    padding: 1rem;
+    grid-area: two four;
+    display: flex;
+    flex-direction: column;
+}
+
+.list-of-org-one,
+.list-of-org-two{
+    margin: 0;
+    font-size: 1.5rem;
+    line-height: 4rem;
+    text-align:left;
+}
+.org-title{
+    font-size: 3rem;
+    text-align: center;
+}
+
+.list-of-organization-cont li{
+    list-style: disc;
+}
+.org-mangr-info{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    text-align: left;
+    background-color: var(--introCardClrDrkBlue);
+    color: var(--txtYellow);  
+}
+
+@media screen and (max-width: 1000px){
+    .our-org-container{
+        flex-direction: column;
+        width: 40rem;
+        /* padding: 0 5rem; */
+    }
+    .building-img-container{
+        height: 20rem;
+        width: 100%;
+    }
+    .list-of-org-one,
+    .list-of-org-two{
+        line-height: 2.5rem;
+    }
+}

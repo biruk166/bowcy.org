@@ -3,6 +3,6 @@ import './options.css';
 
 export default function OptionItem(props) {
   return (
-    <li><a href="none">{props.optionItem}</a></li>
+    <li className='nav-options'><a href="none">{props.optionItem}</a></li>
   )
 }

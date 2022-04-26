@@ -1,0 +1,101 @@
+.all-container{
+    width: 100%;
+    height: min-content;
+    text-align: center;
+}
+.flag-container{
+    height: max-content;
+    padding-bottom: 10em;
+}
+.ethio-flag{
+    opacity: 0.2;
+    width: 100%;
+    height: 30rem;
+    object-fit:fill;
+}
+/* If the see more button is on SEE MORE this class will be applied else it will not */
+.ethio-flag-smaller{
+    height: 65rem !important;
+}
+
+.intro-cards-sec-container{
+    position: relative;
+}
+.intro-cards{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    top: -2rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+}
+
+/* The Blue and Yellow section of intro cards are divided into two
+  the first section holds the blue one. the second section holds the yellow */
+.intro-cards-sec-one,
+.intro-cards-sec-two{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 3rem;
+}
+
+/* If the user clicks SEE LESS when all cards are visible. this class will
+   be applied to hide the yellow section of intro cards*/
+
+/* Contains the SEE MORE/SEE LESS button */
+.see-more-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/* Style for SEE MORE/SEE LESS button*/
+.see-more{
+    display: none;
+    padding: .3em 1em;
+    width: fit-content;
+    text-align: center;
+    font-family: var(---btnFontStyleOxReg);
+    color: var(--btnBlue);
+    cursor: pointer;
+    border: solid var(--txtYellow);
+    border-radius: 1em;
+}
+
+@media screen and (max-width:1400.5px){
+    .ethio-flag{
+        height: 25rem;
+    }
+    .ethio-flag-smaller{
+        height: 55rem !important;
+    }
+}
+
+@media screen and (max-width:950.5px){
+    .intro-cards-sec-one,
+    .intro-cards-sec-two{
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+    .ethio-flag{
+        height: max-content;
+    }
+    .ethio-flag-smaller{
+        height: 18rem !important;
+    }
+}
+@media screen and (max-width:450.5px){
+    .ethio-flag-smaller{
+        height: 42rem !important;
+    }
+}
+/* @media screen and (width:1000.5px){
+    .ethio-flag{
+        height: 30rem;
+    }
+} */

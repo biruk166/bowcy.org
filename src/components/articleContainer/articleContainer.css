@@ -1,0 +1,49 @@
+.detail-article-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    font-family: var(---btnFontStyleOxReg);
+    color: var(--introCardClrDrkBlue);
+    background-color: #f3ebeb;
+}
+
+.detail-title{
+    padding-bottom: 2rem;
+    font-size: 3rem;
+    border-bottom: solid black .5rem;
+    text-align: center;
+}
+.detail-articles{
+    display: flex;
+    gap: 2rem;
+    width: 90rem;
+    font-size: 1.5rem;
+    line-height: 3rem;
+    padding: 2rem;
+}
+
+.contact-author{
+    padding: 1rem;
+    background-color: white;
+    border: #0b3063 solid .4rem;
+}
+
+@media screen and (max-width: 1000px){
+    .detail-articles{
+        width: 70rem;
+    }
+}
+
+@media screen and (max-width: 760.5px){
+    .detail-articles{
+        flex-wrap: wrap;
+        width: fit-content;
+        font-size: 1.2rem;
+        line-height: 2.5rem;
+    }
+    .detail-title{
+        font-size: 2rem;
+    }
+}

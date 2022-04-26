@@ -1,0 +1,8 @@
+.my-story-btn{
+    font-family: var(---btnFontStyleOxReg);
+    font-size: 1.2rem;
+    padding: 2rem;
+    border: none;
+    color: var(--txtWhite);
+    background-color: var(--introCardClrDrkBlue);
+}

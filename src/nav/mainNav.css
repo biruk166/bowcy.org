@@ -1,0 +1,52 @@
+/* The main nav with donate button and logo. the white bar is not the main nav item. */
+.main-nav-container{
+    display: flex;
+    max-width: 100%;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 0 2rem;
+    background-color: black;
+}
+
+.logo{
+    color: var(--txtYellow);
+    font-family: var(---btnFontStyleOxReg);
+    width: 20rem;
+}
+.nav-bar-container{
+    transform: translateY(2rem);
+}
+.nav-bar{
+    left: inherit;
+    right: inherit;
+}
+.donate-btn-container{
+    text-align: end;
+}
+
+
+
+@media screen and (max-width: 1350.5px){
+    .logo{
+        display: none;
+    }
+    .main-nav-container{
+        padding: 1em;
+    }
+    .nav-bar-container{
+        transform: translateY(0);
+    }
+}
+
+@media screen and (max-width: 1000px){
+    .main-nav-container{
+        padding-left: 0;
+    }
+    .nav-bar-container{
+        transform: translateY(-3rem);
+    }
+    .donate-btn-container > button{
+        font-size: 1.5rem;
+    }
+}

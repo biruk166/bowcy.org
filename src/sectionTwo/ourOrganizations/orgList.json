@@ -1,0 +1,28 @@
+{
+    "OrgTitle": "OUR ORGANIZATION",
+    
+    "ListOfOrgOne": ["Child right protection and walfare dirctories",
+                    "Youth Empowerment and Benefit Directorate",
+                    "Women Mobilization and Participation Directorate",
+                    "Gender Mainstreaming Directorate"],
+    "ListOfOrgOneLink":[""],
+    
+    "ListOfOrgTwo":["Youth mainstreaming Directorate",
+                    "Study Project Preparation, Monitoring and Evaluation Directorate",
+                    "Human Resource Development Directorate",
+                    "Purchase, Finance and Property Administration Directorate",
+                    "Public Relation Directorate",
+                    "Internal Auditing Directorate"],
+    "ListOfOrgTwoLink":[""],
+
+
+    "infoName": ["ORGANIZATION MANAGER",
+                "TELEPHONE & MOBILE",
+                "ADDRESS",
+                "EMAIL"],
+
+    "LeaderInfo":["H.E Mrs. Asnaku Deres, Head of Amhara BoWCYA",
+                "+251 582 2663 218   and   +251900862424 / +251942829117",
+                "Bahir Dar, Ethiopia, Amhara Region",
+                "asnaku2016@gmail.com"]
+}

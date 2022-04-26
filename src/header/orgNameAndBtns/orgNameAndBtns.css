@@ -1,0 +1,57 @@
+.btn-txt-container,
+.org-name-btns-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.org-name-btns-container{
+    position: relative;
+    z-index: -1;
+}
+.btn-txt-container{
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    top: 30%;
+}
+.org-name-container{
+    text-align: center;
+    color: var(--txtWhite);
+    font-family: var(---btnFontStyleOxReg);
+    font-size: 2rem;
+}
+.btns-container{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 1rem;
+}
+.home-page-img{
+    width: 100%;
+    max-height: 60rem;
+    object-fit: cover;
+    border-bottom: solid black 3rem;
+}
+
+.learn-more > button{
+    background-color: var(--btnBlack);
+    color: var(--txtYellow);
+}
+button{
+    cursor: pointer;
+}
+@media screen and (max-width: 1000px){
+    .btn-txt-container{
+        top: 15%;
+    }
+    .org-name-container{
+        font-size: 1rem;
+    }
+    .home-page-img{
+        height: 30rem;
+        border-bottom:solid black 2rem;
+    }
+    .btns-container{
+        transform: scale(0.7);
+    }
+}

@@ -1,0 +1,48 @@
+.who-are-we-text-container{
+    display: flex;
+    flex-direction: column;
+    font-family: var(---btnFontStyleOxReg);
+    color: var(--btnBlue);
+    align-items: center;
+    background-color: #f3ebeb;
+    padding-bottom: 5rem;
+}
+
+.main-title-container{
+    font-size: 2.5rem;
+    margin-bottom: -1em;
+}
+
+.org-disc-container{
+    max-width: 60%;
+    font-size: 1.7rem;
+    line-height: 2.5em;
+}
+.more-infro-container{
+    font-size: 1.5rem;
+}
+@media screen and (max-width:1400.5px){
+    
+    .main-title-container{
+        font-size: 2rem;
+    }
+    .org-disc-container{
+        max-width: 80%;
+        font-size: 1.4rem;
+    }
+    .more-infro-container{
+        font-size: 1.3rem;
+    }
+}
+@media screen and (max-width:1000px){
+    .main-title-container{
+        font-size: 1.5rem;
+    }
+    .org-disc-container{
+        max-width: 80%;
+        font-size: 1.2rem;
+    }
+    .more-infro-container{
+        font-size: 1rem;
+    }
+}

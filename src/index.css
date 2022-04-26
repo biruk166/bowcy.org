@@ -4,6 +4,7 @@ html{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: var(---btnFontStyleOxReg);
 }
 li{
     list-style: none;
@@ -18,8 +19,10 @@ button{
      /* ########### color for Text, Bg, Button, Button text #########*/
      --navBarColor: black;
      --navBarWhite: white;
+     --navSubOption: rgb(247, 243, 243);
      --ftrBarYellow: #FFD601;
      --optionMenuItem: #f8f6f6;
+     --option-items-hover: rgb(235, 235, 156);
     
      --introCardClrDrkBlue:#041E43;
      --introCardClrYellow: #FFD601;
@@ -27,7 +30,7 @@ button{
      --txtYellow: #FFD601;
      --txtWhite: white;
      --txtBlack: black;
-     --textBlue: #18277C;
+     --textBlue: #041E43;
      --txtBlueLowOpacity: #041E43;
      --textRed: red;
 
@@ -37,6 +40,7 @@ button{
      --deleteBtn:#ACB4E0;
 
     --txtBoxBg: #EEEBEB;
+    --responsive-width: 1000px;
 
     /* ############### Font ############# */
     ---btnFontStyleOxReg: 'Oxanium', cursive;

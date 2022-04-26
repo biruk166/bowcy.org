@@ -1,0 +1,71 @@
+.all-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.this-my-story-container{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    width: 100rem;
+    height: min-content;
+    background-color: #f3ebeb;
+    color:var(--introCardClrDrkBlue);
+    font-family: var(---btnFontStyleOxReg);
+}
+.person-img-container{
+    width: 40rem;
+    height: 100%;
+}
+
+.person-img{
+    width: inherit;
+    height: inherit;
+    object-fit:cover;
+    border-radius: 1.5rem;
+}
+.title-and-story{
+    display: flex;
+    flex-direction: column;
+}
+.story{
+    font-size: 1.5rem;
+    line-height: 3rem;
+    padding: 2rem;
+    text-align: left;
+}
+.story-title{
+    margin: 0;
+    font-size: 3rem;
+    height: 100%;
+    padding-top: 1rem;
+}
+.btn-container{
+    display: flex;
+    justify-content: end;
+    background-color: rgb(255, 255, 255);
+    align-items: baseline;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+@media screen and (max-width: 1000px){
+    .this-my-story-container{
+        flex-direction: column;
+        width: 40rem;
+    }
+    .person-img-container{
+        height: 20rem;
+    }
+    .person-img{
+        border-radius: 0;
+    }
+    .story-title{
+        font-size: 2rem;
+    }
+    .story{
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+}

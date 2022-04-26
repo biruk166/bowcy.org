@@ -1,39 +1,116 @@
+/* The parent container of intro card */
 .intro-card-container{
-    background-color: var(--introCardClrDrkBlue);
-    width: 28rem;
-    height: 40rem;
+    width: 18rem;
+    height: 30rem;
     padding: 2em;
     border-radius: 1.5em;
     text-overflow: clip;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     cursor: pointer;
+    box-shadow: none;
+    border: transparent solid .5rem;
+    transition: border 200ms ease-in-out;
 }
+
+/* a styling for the yellow intro card. since its color is differnt */
+.intro-card-cont-yellow{
+    background-color: var(--introCardClrYellow);
+    border: solid white 1rem;
+}
+
+.title-yellow,
+.intro-art-yellow{
+    color: var(--textBlue);
+}
+/* ##################  End style for yellow card color #################*/
+
+
+/* a styling for the blue intro card. since its color is differnt */
+.intro-card-cont-blue{
+    background-color: var(--introCardClrDrkBlue);
+    border: solid white 1rem;
+}
+.title-blue{
+    color: var(--txtYellow);
+}
+.intro-art-blue{
+    color: var(--txtWhite);
+}
+/* ##################  End style for bluecard color #################*/
+
+.intro-card-container:hover{
+    border: white solid .5rem;
+}
+
+/* The animated lofi file container of intro card */
 .intro-card-img-container{
     width: inherit;
     text-align: center;
 }
 
+/* The animated lofi file */
 .intro-card-image{
-    width: 20rem;
+    width: 12em;
     border-radius: 20em;
-}
-.title{
-    color: var(--txtYellow);
-    font-family: var(---btnFontStyleOxReg);
-    font-size: 2em;
+    border: solid white .2em;
 }
 
+/* The title of intro card */
+.title{
+    font-family: var(---btnFontStyleOxReg);
+    font-size: 2em;
+    text-align: center;
+}
+
+/* the article container of intro card */
 .intro-article-container{
     width: inherit;
     padding: 2%;
     text-align: center;
 }
 
+/* the article of each intro card */
 .intro-article{
-    color: var(--txtWhite);
     font-family: var(---btnFontStyleOxReg);
     font-size: 1.5em;
+}
+
+
+@media screen and (max-width:1400.5px){
+    .intro-card-container{
+        width: 15rem;
+        height: 25rem;
+    }
+    .intro-card-image{
+        width: 10em;
+    }
+    .title{
+        font-size: 1.5em;
+    }
+    .intro-article{
+        font-size: 1.2em;
+    }
+}
+/* @media screen and (max-width:1000.5px){
+    .intro-card-image{
+        display: none;
+    }
+} */
+
+@media screen and (max-width:950.5px){
+    .intro-card-container{
+        width: 10rem;
+        height: 5rem;
+    }
+    .intro-card-image{
+        display: none;
+    }
+    .title{
+        font-size: 1em;
+    }
+    .intro-article{
+        font-size: .7em;
+    }
 }

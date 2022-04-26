@@ -1,0 +1,50 @@
+.direct-depo-title,
+.direct-depo-info-container > h2{
+    font-family: var(---btnFontStyleOxReg);
+}
+.donation-form-container > h3{
+    width: 50rem;
+    margin: 0;
+    text-align: left;
+}
+.hide-donation-form{
+    display: none;
+}
+.cancel-donation-form-icon{
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+.donation-form-container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 60rem;
+    padding: 2rem 2rem;
+    background-color: white;
+    box-shadow: 0 0 3rem rgb(46, 44, 44);
+    border-radius: 1.5rem;
+    margin: 2rem;
+}
+.direct-depo-title{
+    font-size: 3rem;
+}
+.direct-depo-info-container{
+    display: flex;
+    text-align: left;
+    justify-content: center;
+    gap: 2rem;
+}
+@media screen and (max-width:550px){
+    .donation-form-container{
+        width: 30rem;
+        font-size: .8rem;
+    }
+    .donation-form-container > h3{
+        width: 30rem;
+    }
+}

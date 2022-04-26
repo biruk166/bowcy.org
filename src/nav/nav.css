@@ -1,0 +1,98 @@
+/* File-name: nav.css
+   Descrpition: this file ism linked with Nav.jsx. it will handle the style for the navigation bar
+                its state will change based on the size of the window. the navigation bar might appear
+                as a bar or only as an option icon. whcn the option icon is clicked. mobile frendly nav link
+                will appear */
+
+/* class that contains all navigation linkes */
+.nav-links{
+    position: relative;
+}
+
+/* the button WHO ARE WE and DIGITAL LIBRARY */
+.option-btn{
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    top: 1rem;
+    font-size: 3rem;
+    font-family: var(---btnFontStyleOxReg);
+    z-index: 4;  
+}
+.option-btn-color-black{
+    color: darkblue;
+}
+.option-btn-color-white{
+    color: white;
+}
+
+
+@media screen and (max-width: 1000px){ 
+    .who-are-we-index{
+        z-index: 2;
+    }
+    .digital-library-index{
+        position: relative;
+        z-index: 4;
+    }
+    .nav-items-disp-none{
+        display: none;
+    }
+
+    .nav-items-container{
+        width: 30vh;
+        min-height: 60vh;
+        padding: 7em 3em 2em 3em;
+        border-radius: 0 0 1em 1em;
+        background-color: var(--navBarWhite);
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        gap: 3em;
+        position: absolute;
+    }
+}
+@media screen and (max-width: 450px){
+    .who-are-we-index{
+        z-index: 2;
+    }
+    .digital-library-index{
+        position: relative;
+        z-index: 4;
+    }
+    .nav-items-disp-none{
+        display: none;
+    }
+
+    .nav-items-container{
+        width: 100vh;
+        min-height: 100vh;
+        padding: 7em 3em 2em 3em;
+        border-radius: 0 0 1em 1em;
+        background-color: var(--navBarWhite);
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        gap: 3em;
+        position: absolute;
+    }
+}
+
+@media screen and (min-width: 1000px){
+    .nav-items-disp-none,
+    .nav-items-container{
+        width: max-content;
+        padding: 1.5em 3em;
+        border-radius: 1em;
+        background-color: var(--navBarWhite);
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 4em;
+    }
+    .option-btn{
+        display: none;
+    }
+
+    
+}
