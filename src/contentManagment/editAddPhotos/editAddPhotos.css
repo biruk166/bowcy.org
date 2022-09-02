@@ -1,0 +1,21 @@
+.main-published-photo-container{
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    padding: 1rem;
+    border: .3rem black solid;
+    margin: 1rem;
+}
+
+.published-photo-container > img{
+    width: 15rem;
+}
+.published-photo-container{
+    width: fit-content;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: .6rem;
+}

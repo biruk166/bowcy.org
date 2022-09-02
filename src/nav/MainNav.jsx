@@ -1,9 +1,12 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { changeDonateFormDispState } from '../stateManagment/frontEnd/DisplayState';
 import './mainNav.css';
 import Nav from './Nav';
 import GenericBtn from '../components/genericBtn/GenericBtn';
 
 export default function MainNav() {
+    const dispatch = useDispatch();
   return (
     <div className='nav-bar-background'>
         <div className='main-nav-container'>
@@ -16,7 +19,7 @@ export default function MainNav() {
                 </div>
             </div>
 
-            <div className='donate-btn-container'>
+            <div className='donate-btn-container' onClick={() => dispatch(changeDonateFormDispState())}>
                 <GenericBtn name={'DONATE'}/>
             </div>
         </div>

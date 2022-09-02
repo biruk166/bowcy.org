@@ -1,17 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux'
+import { changeDonateFormDispState } from '../../stateManagment/frontEnd/DisplayState';
+
 import './donationForm.css' ;
 import GenericBtn from '../genericBtn/GenericBtn';
 import {MdOutlineCancel} from 'react-icons/md'
 
 
 export default function DonationForm() {
-    const [isDonationHidden, setDonationFormDis] = useState(true)
-    const showDonationForm=()=>{
-        isDonationHidden ? setDonationFormDis(false) : setDonationFormDis(true)
-    }
+
+  const dispatch = useDispatch();
+  let formDispStatus = useSelector((state) => state.display.donateForm);
+  
   return (
-    <div className={isDonationHidden? 'donation-form-container':'hide-donation-form'}>
-        <div className='cancel-donation-form-icon' onClick={showDonationForm}> <MdOutlineCancel size={27} color={'#FFD601'}/> </div>
+    <div className={formDispStatus? 'donation-form-container':'hide-donation-form'}>
+        <div className='cancel-donation-form-icon' onClick={() => dispatch(changeDonateFormDispState())}> <MdOutlineCancel size={27} color={'#FFD601'}/> </div>
         <h1 className='direct-depo-title'>DIRECT DEPOSIT INFORMATION</h1>
         <div className='direct-depo-info-container'>
             <div className='info'>

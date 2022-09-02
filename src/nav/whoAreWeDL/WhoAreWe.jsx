@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import {HashLink as Link} from 'react-router-hash-link'
 import {AiOutlineDownCircle} from "react-icons/ai"; 
 import './options.css';
 import OptionItem from './OptionItem';
@@ -16,12 +17,27 @@ export default function WhoAreWe(){
     <div className='who-arewe-container'>
             <button className='nav-items' onClick={ChangeDisplayProp}> WHO ARE WE?<AiOutlineDownCircle/> </button>
             <ul className={ display?'option-items':"option-items-dis-none"}>
-                <OptionItem optionItem={"VISION"} />
-                <OptionItem optionItem={"MISSION"} />
-                <OptionItem optionItem={"VALUES"} />
-                <OptionItem optionItem={"DIRECTORATES"} />
+              
+                <div className='nav-options'>
+                  <Link to={"vision"} smooth> VISION </Link>
+                </div>
+
+                <div className='nav-options'>
+                  <Link to={"#see-our-partners"} smooth> PARTNERS </Link>
+                </div>
+                
+                
+                <div className='nav-options'>
+                  <Link to={"#see-our-partners"} smooth> VALUES </Link>
+                </div>
+
+                <div className='nav-options'>
+                  <Link to={"#directorates"} smooth> DIRECTORATES </Link>
+                </div>
+                
+                
                 <OptionItem optionItem={"ADDRESS"}/>
-                <OptionItem optionItem={"WHAT WE DO?"} />
+                <OptionItem optionItem={"CONTACT US"} />
             </ul> 
     </div>
   )

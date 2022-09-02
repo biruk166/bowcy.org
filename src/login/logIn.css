@@ -1,0 +1,31 @@
+.log-in-page-main-container{
+    margin: 2rem;
+}
+
+.log-in-page-main-container,
+.login-items-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+.login-items-container{
+    border: .3rem solid black;
+    border-radius: 1rem;
+    padding: 1rem;
+    height: 30rem;
+}
+.login{
+    font-size: 3rem;
+}
+.user-email-password{
+    width: 40rem;
+    height: 3rem;
+    font-size: 1.5rem;
+    border-radius: .5rem;
+}
+.wrong-password{
+    color: red;
+    display: none;
+}

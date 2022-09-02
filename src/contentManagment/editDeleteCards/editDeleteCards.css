@@ -1,0 +1,19 @@
+.edit-delete-card-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+.edit-delete-card-container > div{
+    width: fit-content;
+    font-size: 2rem;
+    font-weight: bold;
+    border: .5rem solid black;
+    border-radius: 1rem;
+    padding: 1rem;
+    background-color: var(--btnYellow);
+}
+
+.edit-delete-card-container > div:hover{
+    background-color: rgb(241, 222, 112);
+}

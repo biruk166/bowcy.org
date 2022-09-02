@@ -6,7 +6,7 @@ const orgNameAndLdrInfo = require('./orgList.json');
 
 export default function OurOrganizations() {
   return (
-    <div className='all-container'> 
+    <div className='all-container' id='directorates'> 
         <div className='our-org-container'>
             <div className='building-img-container'>
                 <img className='building-img' src={building} alt="Heaad office" />

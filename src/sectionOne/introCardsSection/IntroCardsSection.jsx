@@ -13,7 +13,7 @@ export default function IntroCardsSection() {
     const [seeMore, setSeeMore] = useState('SEE MORE')
   return (
     
-    <div className='intro-cards-sec-container'>
+    <div className='intro-cards-sec-container' id='what-we-do'>
         <div className='flag-container'>
             <img className={display? 'ethio-flag':'ethio-flag ethio-flag-smaller'} src={ethiopian} alt="ethiopian flag" />
         </div> 

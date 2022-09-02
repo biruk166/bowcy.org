@@ -64,9 +64,9 @@ WHO ARE WE? contains [VISON, MISSION, VALUES] etc */
     position: relative;
     background-color: transparent;
     }
-    .nav-options:nth-last-child(){
+    /* .nav-options:nth-last-child(){
         margin-bottom: 0;
-    }
+    } */
 }
 
 /* linked with OptionItems.jsx file, each optionItems will be used to create the nav bar
@@ -100,7 +100,7 @@ and the sub menu items that are listed under WHO ARE WE?, and DIGITAL LIBRARY*/
 }
 
 /* each option items contain a link tag inside li tag */
-.option-items > li{
+.option-items > *{
     margin-top: 1em;
     position: relative;
     background-color: transparent;
@@ -113,7 +113,7 @@ and the sub menu items that are listed under WHO ARE WE?, and DIGITAL LIBRARY*/
 }
 
 /* ::before element that will be used to animate hover effect on each option items */
-.option-items > li::before{
+.option-items > *::before{
     content: '';
     display: block;
     position: absolute;
@@ -131,7 +131,7 @@ and the sub menu items that are listed under WHO ARE WE?, and DIGITAL LIBRARY*/
 }
 
 /* when user hovers on each option items the :before tag will expand and its yellow background will be displayed */
-.option-items > li:hover::before{
+.option-items > *:hover::before{
     transform: scaleX(.7);
     border-left:solid black .2rem ;
 }

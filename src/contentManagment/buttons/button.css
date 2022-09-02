@@ -1,0 +1,30 @@
+.cms-delete-btn,
+.cms-publish-btn,
+.cms-add-btn,
+.cms-cancel-btn{
+    width: fit-content;
+    height: fit-content;
+    padding: .5rem;
+    font-weight: bold;
+    color: white;
+}
+
+.cms-add-btn,
+.cms-delete-btn{
+    font-size: 1.5rem;
+}
+
+.cms-cancel-btn,
+.cms-publish-btn{
+    font-size: 2.5rem;
+}
+
+.cms-add-btn,
+.cms-publish-btn{
+    background-color: rgb(28, 163, 28);
+}
+
+.cms-delete-btn,
+.cms-cancel-btn{
+    background-color: red;
+}

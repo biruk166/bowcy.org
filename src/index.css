@@ -43,6 +43,6 @@ button{
     --responsive-width: 1000px;
 
     /* ############### Font ############# */
-    ---btnFontStyleOxReg: 'Oxanium', cursive;
+    ---btnFontStyleOxReg: 'Oxanium', Times;
     
 }

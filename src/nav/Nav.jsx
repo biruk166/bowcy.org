@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
+
 import './nav.css';
 import {FiMenu} from 'react-icons/fi';
 import {ImCancelCircle} from 'react-icons/im'
@@ -11,6 +14,7 @@ export default function Nav() {
 
   //state that will toggle between true and false to determine class name
   const [display, setDisplayProp] = useState(false);
+
 /* togles the class if it is true it will set the class nav-items-container
    else it will set the class to nav-itemsdisp-none which will make its diaplay property none */
   const ChangeDiplayProp =() => {
@@ -22,16 +26,26 @@ export default function Nav() {
       <button className={display?'option-btn option-btn-color-black': 'option-btn option-btn-color-white'} onClick={ChangeDiplayProp}>{display? <ImCancelCircle/> : <FiMenu/>}</button>
 
       <div className={display ?"nav-items-container" : 'nav-items-disp-none'}>
-
-        <OptionItem optionItem={'HOME'}/>
+        <Link to= "/">
+          <OptionItem optionItem={'HOME'}/>
+        </Link>
+        
         <div className="who-are-we-index">
           <WhoAreWe />
         </div>
+
         <div className='digital-library-index'>
           <DigitalLibrary />
         </div>
-        <OptionItem optionItem={'WHAT WE DO'}/>
-        <OptionItem optionItem={'NEWS/EVENTS'}/>
+
+        <HashLink to="#what-we-do" smooth>
+          <OptionItem optionItem={'WHAT WE DO'}/>
+        </HashLink>
+
+        <HashLink to="#news-events-card" smooth>
+          <OptionItem optionItem={'NEWS/EVENTS'}/>
+        </HashLink>
+        
         <OptionItem optionItem={'PROGRAMS'}/>
 
           <div>

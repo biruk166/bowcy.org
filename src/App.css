@@ -8,3 +8,13 @@ body{
     margin: 0;
     background-color: white;
 }
+.app{
+    position: relative;
+}
+
+.app-donation-form-container{
+    position: absolute;
+    z-index: 5;
+    left: 50%;
+    transform: translate(-50%, 0);
+}

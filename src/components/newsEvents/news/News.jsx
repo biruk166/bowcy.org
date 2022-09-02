@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+
 import './news.css'
 import kids from './kids.jpg'
 
@@ -14,7 +16,10 @@ export default function News(props) {
             
                 <p className='news-article'> {props.newsArticle} </p>
                 
-                <a className='learn-more' href="none">READ MORE</a>
+                <Link className='learn-more' to={"/news-card-article"} >
+                    <a> READ MORE </a>
+                </Link>
+                
             </div>
             
         </div>

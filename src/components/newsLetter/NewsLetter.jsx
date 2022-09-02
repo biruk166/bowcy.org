@@ -11,7 +11,7 @@ import unfpa from './unfpa.png'
 const iconSize = 22;
 export default function NewsLetter() {
   return (
-      <div className='main-footer-container'>
+      <div className='main-footer-container' id='see-our-partners'>
           
         {/* <div className='social-container'>
             <h2 className='follow-us'> FOLLOW US NOW </h2>

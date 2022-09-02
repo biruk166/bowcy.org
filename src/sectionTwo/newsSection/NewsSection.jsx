@@ -25,8 +25,10 @@ export default function NewsSection() {
     const decrment=()=>{
         setCounter(newsCounter - 1);
     }
+
   return (
-    <div>
+    
+    <div id='news-events-card'>
     <div className='news-section-container'>
         <div className='news-section'>
             <News NewsTittle={title} newsArticle={article} />

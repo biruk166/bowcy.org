@@ -1,0 +1,53 @@
+.edit-add-article-container{
+    margin: 2rem;
+    width: 30rem;
+    padding: 2rem;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: .2rem black solid;
+}
+
+.main-cms-edit-add-article-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.current-article-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 60%;
+}
+.new-text-image-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+.add-new-author-email{
+    width: 50rem;
+    height: 3rem;
+    font-size: 1.5rem;
+}
+.add-new-article,
+.add-new-title{
+    padding: 1rem;
+    width: 100vh;
+    resize: vertical;
+}
+.add-new-article{
+    min-height: 50rem;
+    font-size: 2rem;
+}
+.add-new-title{
+    height: 5rem;
+    font-size: 2.5rem;
+}
+.publish-cancel-btn-container{
+    display: flex;
+    gap: .5rem;
+}

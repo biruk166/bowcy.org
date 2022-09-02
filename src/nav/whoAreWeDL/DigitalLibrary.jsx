@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
 import {AiOutlineDownCircle} from "react-icons/ai";
+import {HashLink as Link} from 'react-router-hash-link'
 import './options.css';
 import OptionItem from './OptionItem';
 
@@ -21,8 +22,12 @@ export default function DigitalLibrary() {
                     <OptionItem optionItem={"REPORTS"} />
                     <OptionItem optionItem={"RESEARCH"} />
                     <OptionItem optionItem={"STORIES"} />
-                    <OptionItem optionItem={"SPEECHES"} />
-                    <OptionItem optionItem={"PHOTOS"}/>
+                    <div className='nav-options'>
+                      <Link to={"/login"} smooth> LOGIN </Link>
+                    </div>
+                    <div className='nav-options'>
+                      <Link to={"/images"} smooth> PHOTOS </Link>
+                    </div>
                     <OptionItem optionItem={"VIDEOS"} />
                 </ul> 
         </div>

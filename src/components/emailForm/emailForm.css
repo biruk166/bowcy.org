@@ -1,3 +1,7 @@
+.set-display-none{
+    display: none;
+}
+
 .main-email-container{
     width: fit-content;
     display: flex;
