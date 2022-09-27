@@ -19,7 +19,7 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    padding: 1em;
+    padding: .5em;
 }
 
 .news-title,
@@ -27,6 +27,7 @@
 .news-article{
     color: var(--introCardClrDrkBlue);
     font-family: var(---btnFontStyleOxReg);
+    margin: 0;
 }
 
 .news-article{
@@ -39,8 +40,12 @@
     margin:0;
 }
 .learn-more{
-    padding: 1em;
     font-size: 1.2rem;
+    color: gold;
+}
+
+.news-pubished-date{
+    color: var(--introCardClrDrkBlue) !important;
 }
 
 @media screen and (max-width: 1240px){
@@ -69,7 +74,11 @@
     .img-vid-container{
         height: 10rem;
     }
+    .learn-more,
     .news-title{
         font-size: 1.2rem;
+    }
+    .news-pubished-date{
+        font-size: .7rem;
     }
 }

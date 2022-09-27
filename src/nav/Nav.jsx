@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
+import CheckInput from '../functionalUtility/CheckInput';
 
 import './nav.css';
 import {FiMenu} from 'react-icons/fi';
@@ -21,13 +22,16 @@ export default function Nav() {
      display ? setDisplayProp(false): setDisplayProp(true);
   } 
   
+  const [languge, setLanguge] = useState('english')
+
   return (
+    
     <div className='nav-links'>
       <button className={display?'option-btn option-btn-color-black': 'option-btn option-btn-color-white'} onClick={ChangeDiplayProp}>{display? <ImCancelCircle/> : <FiMenu/>}</button>
 
       <div className={display ?"nav-items-container" : 'nav-items-disp-none'}>
         <Link to= "/">
-          <OptionItem optionItem={'HOME'}/>
+          <OptionItem optionItem={ CheckInput.IsLangugeEnglish(languge) ? 'HOME' : `መነሻ ገጽ`}/>
         </Link>
         
         <div className="who-are-we-index">
@@ -39,20 +43,18 @@ export default function Nav() {
         </div>
 
         <HashLink to="#what-we-do" smooth>
-          <OptionItem optionItem={'WHAT WE DO'}/>
+          <OptionItem optionItem={ CheckInput.IsLangugeEnglish(languge) ?'WHAT WE DO' : `እኛ እምንሰራው`}/>
         </HashLink>
 
         <HashLink to="#news-events-card" smooth>
-          <OptionItem optionItem={'NEWS/EVENTS'}/>
+          <OptionItem optionItem={ CheckInput.IsLangugeEnglish(languge) ? 'NEWS/EVENTS' : `ዜና / ፕሮግራሞች`}/>
         </HashLink>
         
-        <OptionItem optionItem={'PROGRAMS'}/>
-
-          <div>
-            <hr />
-          </div>
-      </div>
+          <Link to={'/donation-page'}>
+              <OptionItem optionItem={CheckInput.IsLangugeEnglish(languge) ? 'DONATE NOW' : `አሁኑኑ ይለግሱ`}/>
+          </Link>
         
+      </div>
     </div>
   )
 }

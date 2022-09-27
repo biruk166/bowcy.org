@@ -12,7 +12,7 @@
 .logo{
     color: var(--txtYellow);
     font-family: var(---btnFontStyleOxReg);
-    width: 20rem;
+    width: 5rem;
 }
 .nav-bar-container{
     transform: translateY(2rem);
@@ -21,10 +21,46 @@
     left: inherit;
     right: inherit;
 }
-.donate-btn-container{
+
+.lang-option-container{
     text-align: end;
+    display: flex;
+    gap: .5rem;
+    align-items: center;
 }
 
+.home-btn{
+    display: none;
+}
+
+.donate-btn-container{
+    display: flex;
+    gap: .5rem;
+}
+
+.lang-option{
+    color: rgb(63, 49, 49);
+    font-family: var(---btnFontStyleOxReg);
+    width: fit-content;
+    height: 2.5rem;
+    border-radius: 1rem;
+    background-color: var(--btnYellow);
+    border: none;
+}
+
+
+
+@media screen and (max-width: 400px){
+    .lang-option{
+        height: 2rem;
+        border-radius: 0rem;
+        width: 3rem;
+    }
+
+    .home-btn{
+    display: block;
+    }
+}
 
 
 @media screen and (max-width: 1350.5px){
@@ -37,6 +73,7 @@
     .nav-bar-container{
         transform: translateY(0);
     }
+
 }
 
 @media screen and (max-width: 1000px){
@@ -46,7 +83,10 @@
     .nav-bar-container{
         transform: translateY(-3rem);
     }
-    .donate-btn-container > button{
+    .home-btn > button{
         font-size: 1.5rem;
     }
+    .home-btn{
+        display: block;
+        }
 }

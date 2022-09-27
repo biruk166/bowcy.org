@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import {GrNext, GrPrevious} from 'react-icons/gr'
-import {HiDotsHorizontal} from 'react-icons/hi'
 import './newsSection.css'
 import News from '../../components/newsEvents/news/News'
 
@@ -23,7 +22,9 @@ export default function NewsSection() {
         setCounter(newsCounter + 1);
     }
     const decrment=()=>{
-        setCounter(newsCounter - 1);
+        if(newsCounter != 1){
+          setCounter(newsCounter - 1);  
+        }
     }
 
   return (
@@ -31,17 +32,15 @@ export default function NewsSection() {
     <div id='news-events-card'>
     <div className='news-section-container'>
         <div className='news-section'>
-            <News NewsTittle={title} newsArticle={article} />
-            <News NewsTittle={title} newsArticle={article} />
-            <News NewsTittle={title} newsArticle={article} />  
+            <News NewsTittle={title} newsArticle={article} newsPublishedDate={' 2022/12/22'}/>
+            <News NewsTittle={title} newsArticle={article} newsPublishedDate={' 2022/12/22'}/>
+            <News NewsTittle={title} newsArticle={article} newsPublishedDate={' 2022/12/22'}/>  
         </div>
 
         <div className='navigation'>
             <div onClick={decrment}><GrPrevious className='icon-prv' size={30} /></div>
             <h1 className='numb-box'>{newsCounter}</h1>
             <div onClick={incrment}><GrNext className='icon-nxt' size={30} /></div>
-            
-            
         </div>
         
     </div>

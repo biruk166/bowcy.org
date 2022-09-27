@@ -11,6 +11,7 @@
     display: none;
 }
 .cancel-donation-form-icon{
+    display: none;
     cursor: pointer;
     position: absolute;
     top: 1rem;
@@ -25,8 +26,8 @@
     position: relative;
     width: 60rem;
     padding: 2rem 2rem;
-    background-color: white;
-    box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.7);
+    background-color: rgb(245, 239, 239);
+    /* box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.7); */
     border-radius: 1.5rem;
     margin: 2rem;
 }

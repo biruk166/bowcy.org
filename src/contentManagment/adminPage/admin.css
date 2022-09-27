@@ -1,8 +1,10 @@
 .main-adim-page-container{
     margin: 1rem 1rem;
 }
+
 .welcome-message{
     font-size: 2.5rem;
     color: red;
     text-align: center;
+    justify-items: flex-start;
 }

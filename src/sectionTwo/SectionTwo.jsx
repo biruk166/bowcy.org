@@ -8,7 +8,6 @@ import DonationForm from '../components/donationForm/DonationForm';
 export default function SectionTwo() {
   return (
     <div>
-        <EmailForm />
         <OurOrganizations />
         <NewsSection />
     </div>
