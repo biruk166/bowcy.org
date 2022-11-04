@@ -22,15 +22,25 @@ export default function DigitalLibrary() {
         <div className='who-arewe-container'>
                 <button className='nav-items' onClick={ChangeDisplayProp}> { CheckInput.IsLangugeEnglish(languge) ? `DIGITAL LIBRARY` : `ዲጂታል ቤተ-መጽሐፍት`}<AiOutlineDownCircle/></button>
                 <ul className={display ? 'option-items another': 'option-items-dis-none'}>
-                    <OptionItem optionItem={CheckInput.IsLangugeEnglish(languge) ? "REPORTS" : `ሪፖርቶች`} />
-                    <OptionItem optionItem={CheckInput.IsLangugeEnglish(languge) ? "RESEARCH" : `ምርምር`} />
+
+                    <div className='nav-options'>
+                      <Link to={'report-page'}> {CheckInput.IsLangugeEnglish(languge) ? "REPORTS" : `ሪፖርቶች`} </Link>
+                    </div>
+
+                    <div className='nav-options'>
+                      <Link to={'research-page'}> {CheckInput.IsLangugeEnglish(languge) ? "RESEARCH" : `ምርምር`} </Link>
+                    </div>
+
                     <OptionItem optionItem={CheckInput.IsLangugeEnglish(languge) ? "STORIES" : `ታሪኮች`} />
+                    
                     <div className='nav-options'>
                       <Link to={"/login"} smooth> LOGIN </Link>
                     </div>
+
                     <div className='nav-options'>
                       <Link to={"/images"} smooth> {CheckInput.IsLangugeEnglish(languge) ? `PHOTOS` : `ፎቶዎች`} </Link>
                     </div>
+                    
                     <OptionItem optionItem={CheckInput.IsLangugeEnglish(languge) ? "VIDEOS" : `ቪዲዮዎች`} />
                 </ul> 
         </div>

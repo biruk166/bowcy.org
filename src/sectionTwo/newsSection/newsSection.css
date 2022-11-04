@@ -4,10 +4,13 @@
     justify-content: center;
     margin: 5rem;
 }
+.main-news-sec-container{
+    display: flex;
+    justify-content: center;
+}
 
 .news-section{
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
     gap: 3rem;
 }

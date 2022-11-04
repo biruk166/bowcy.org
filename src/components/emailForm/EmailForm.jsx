@@ -1,14 +1,34 @@
-import React from 'react'
+import React,{useState} from 'react'
 import './emailForm.css'
 import {MdOutlineCancel} from 'react-icons/md'
-import { useDispatch, useSelector } from 'react-redux'
-import { changeEmailDispState } from '../../stateManagment/frontEnd/DisplayState'
+import CheckInput from '../../functionalUtility/CheckInput';
 
 export default function EmailForm() {
 
-  const dispatch = useDispatch();
-  let formDispStatus = useSelector((state) => state.display.emailForm);
+  const [isNameCorrect, setIsNameIncorrect] = useState(false);
+  const [isEmailCorrect, setIsEmailIncorrect] = useState(false);
+  const [isMessageCorrect, setIsMessageIncorrect] = useState(false);
+  const [sucess, setSucess] = useState(false);
 
+  const [Name, setName] = useState('');
+  const [Email, setEmail] = useState('');
+  const [Message, setMessage] = useState('');
+
+  
+  function isInputCorrect(){
+    CheckInput.CheckWordLength(Message, 3) ? setIsMessageIncorrect(false) : setIsMessageIncorrect(true);
+    CheckInput.CheckWordLength(Name, 2) ? setIsNameIncorrect(false) : setIsNameIncorrect(true);
+    CheckInput.VerifyEmailFormat(Email) ? setIsEmailIncorrect(false) : setIsEmailIncorrect(true);
+    if(isNameCorrect  && isEmailCorrect && isMessageCorrect){
+      console.log('not sent')
+    }
+    else console.log('sent');
+    console.log('email: ' + Email);
+    console.log("name: " + Name);
+    console.log( "message: " + Message);
+  }
+  
+  
 
   return (
     <div className={'main-email-container'}>
@@ -18,24 +38,29 @@ export default function EmailForm() {
       <div className='email-form-container'>
           <select className= 'list-of-dept' name="departments" id="departments">
             <option value="none" selected disabled hidden>SEND EMAIL BY DEPARTMENT</option>
-            <option value="dpt">CHILD PROTECTION DEP</option>
-            <option value="dpt">CHILD PROTECTION DEP</option>
-            <option value="dpt">CHILD PROTECTION DEP</option>
-            <option value="dpt">CHILD PROTECTION DEP</option>
-            <option value="dpt">CHILD PROTECTION DEP</option>
-            <option value="dpt">CHILD PROTECTION DEP</option>
-            <option value="dpt">CHILD PROTECTION DEP</option>
-            <option value="dpt">CHILD PROTECTION DEP</option>
-            <option value="dpt">CHILD PROTECTION DEP</option>
+            <option value="dpt">CHILD RIGHT PROTECTION DEP.</option>
+            <option value="dpt">YOUTH EMPOWERMENT AND BENFIT DEP.</option>
+            <option value="dpt">WOMEN MOBILIZATION AND PARTICIPATION DEP.</option>
+            <option value="dpt">GENDER MAINSTREAMING DEP.</option>
+            <option value="dpt">YOUTH MAINSTREAMING DEP.</option>
+            <option value="dpt">PROJECT EVALUATION DEP.</option>
+            <option value="dpt">HUMAN RESOURCE DEVLOPMENT DEP</option>
+            <option value="dpt">PURCHASE, FINANCE, AND PROPERTY ADMINTRATION DEP.</option>
+            <option value="dpt">PUBLIC RELATION DEP.</option>
+            <option value="dpt">INTERNAL AUDITING DEP.</option>
           </select>
 
-          <input className='sender-email' type="text" placeholder='Enter your full name here' required/>
-          <input className='sender-email' type="email" placeholder='Enter your email here' required/>
-          <h4 className='email-format'>email format is wrong Ex: myemail@gmail.com</h4>
+          <input className='sender-email' type="text" placeholder='Enter your full name here' required onChange={(e)=> {setName(e.target.value)}}/>
+          <h4 style={{color:'red', display: isNameCorrect ? 'block' : 'none'}}>name can't be empty</h4>
+
+          <input className='sender-email' type="email" placeholder='Enter your email here' required onChange={(e)=>{ setEmail(e.target.value)} }/>
+          <h4 style={{color:'red', display: isEmailCorrect ? 'block' : 'none'}}>email format is wrong Ex: myemail@gmail.com</h4>
           
-          <textarea className='message-input' type="text" required/>
-          <h4 className='email-format'>Message box can't be empty or under 3 words</h4>
-          <button className='send-btn' type="submit">SEND</button>
+          <textarea className='message-input' type="text" required onChange={(e)=>{setMessage(e.target.value)}}/>
+          <h4 style={{color:'red', display: isMessageCorrect ? 'block' : 'none'}}>Message box can't be empty or under 3 words</h4>
+
+          <h4 style={{color:'green', display: sucess ? 'none' : 'none'}}>THANK YOU FOR YOUR EMAIL. WE WILL CONTACT YOU AS SOON AS POSSIBLE</h4>
+          <button className='send-btn' onClick={()=>{ isInputCorrect();}}> SEND </button>
       </div>
     </div> 
   )

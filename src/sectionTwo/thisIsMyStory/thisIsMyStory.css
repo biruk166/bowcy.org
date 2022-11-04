@@ -10,9 +10,10 @@
     justify-content: center;
     width: 100rem;
     height: min-content;
-    background-color: #f3ebeb;
+    background-color: white;
     color:var(--introCardClrDrkBlue);
     font-family: var(---btnFontStyleOxReg);
+    box-shadow: 1rem 1rem 1rem rgb(88, 83, 83);;
 }
 .person-img-container{
     width: 40rem;
@@ -44,16 +45,18 @@
 .btn-container{
     display: flex;
     justify-content: end;
-    background-color: rgb(255, 255, 255);
+    background-color: white;
     align-items: baseline;
     gap: 1rem;
     padding: 2rem;
 }
 
-@media screen and (max-width: 1000px){
+
+@media screen and (max-width: 880px){
     .this-my-story-container{
         flex-direction: column;
         width: 40rem;
+        background-color: #f3ebeb;
     }
     .person-img-container{
         height: 20rem;

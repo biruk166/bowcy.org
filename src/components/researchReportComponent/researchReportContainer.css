@@ -1,0 +1,51 @@
+.repo-res-main-container{
+    display: flex;
+    flex-direction: column;
+    width: 50rem;
+    font-family: var(---btnFontStyleOxReg);
+    font-size: 1.5rem;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: .5rem .5rem 1rem black, -.5rem -.5rem 1rem rgb(73, 71, 71);
+}
+.repo-res-main-container img{
+    width: 10rem;
+    float: left;
+}
+.repo-res-main-container h3{
+    font-size: 1.5rem;
+    font-weight: lighter;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.repo-res-func-container{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+.repo-res-func-container button{
+    width: 100%;
+    height: 4rem;
+    font-size: 1em;
+    font-family: var(---btnFontStyleOxReg);
+}
+.repo-res-func-container button:nth-child(1){
+    background-color: gold;
+}
+.repo-res-func-container button:nth-child(2){
+    background-color: green;
+    color: white;
+}
+.repo-res-func-container button:nth-child(3){
+    background-color: black;
+    color: gold;
+}
+
+@media (max-width: 420px){
+    .repo-res-main-container{
+        max-width: 90%;
+    }
+}
+    

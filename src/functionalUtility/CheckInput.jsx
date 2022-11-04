@@ -1,5 +1,7 @@
 
 // to check the number of word in the given input 
+// word -> the given input word
+// count -> the minnimum amount of words
 function CheckWordLength(word, count)
 {
     word = word.split(' ').length;
@@ -15,6 +17,7 @@ function CheckWordLength(word, count)
 
 // from the given article name it will create a file name by adding up the first
 // few letters from the article
+// it will be used to create a title name for the article;
 function CreateFileName(articleTitle)
 {
     let dirctName = '';
@@ -40,12 +43,15 @@ function VerifyEmailFormat(email)
     return false;
 }
 
+
+// checks if the users prefered languge is english.
 function IsLangugeEnglish(lan){
     if(lan == 'english'){
         return true;
     }
     else return false;
 }
+
 
 // the following function will create the date the article
 // or any other material published
@@ -81,6 +87,7 @@ function UploadPicture(filePath)
 
 // finish this func
 // to upload PDF file to the website and save its file name in the data base
+// also controls the file type
 function Is_PDF_File(filePath)
 {
     let allowedExtesion = /(\.doc|\.docx|\.odt|\.pdf|\.tex|\.txt|\.rtf|\.wps|\.wks|\.wpd)$/i;
@@ -89,10 +96,12 @@ function Is_PDF_File(filePath)
     }
 }
 
-
+// to check if the user pasword is right
 function checkPassWord(){
     return true;
 }
+
+
 
 export default{CheckWordLength,
                CreateFileName, 

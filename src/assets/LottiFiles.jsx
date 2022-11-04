@@ -1,11 +1,11 @@
-import finance from './lottiFiles/finance.gif';
-import heart from './lottiFiles/heart.gif';
-import partcipation from './lottiFiles/partcipation.gif';
+import finance from './lottiFiles/finance.png';
+import heart from './lottiFiles/heart.png';
+import partcipation from './lottiFiles/partcipation.png';
 import studying from './lottiFiles/studying.gif';
-import voting from './lottiFiles/voting.gif';
+import voting from './lottiFiles/voting.png';
 import women_impowerment from  './lottiFiles/women_impowerment.gif';
-import women_protection from './lottiFiles/women_protection.gif';
-import youth_impowerment from './lottiFiles/youth_impowerment.gif';
+import women_protection from './lottiFiles/women_protection.png';
+import youth_impowerment from './lottiFiles/youth_impowerment.png';
 
 export default{
     finance,

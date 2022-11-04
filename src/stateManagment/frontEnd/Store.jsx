@@ -1,13 +1,12 @@
 import { configureStore} from "@reduxjs/toolkit"
-import { displaySlice } from "./DisplayState"
+import { SetCurrent } from "./SetCurrentArticle"
 
 
 
-
-export default configureStore({
+export const store = configureStore({
     reducer: {
-        display: displaySlice.reducer
-    }
+        current: SetCurrent,
+    },
 })
 
 

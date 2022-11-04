@@ -104,18 +104,23 @@
 
 @media screen and (max-width:950.5px){
     .intro-card-container{
+<<<<<<< HEAD
         padding: 3rem;
         width: 10rem;
         height: 10rem;
         border-radius: .5em;
+=======
+        width: 13rem;
+        height: 7rem;
+>>>>>>> refs/remotes/origin/main
     }
     .intro-card-image{
         width: 4em;
     }
     .title{
-        font-size: 1em;
+        font-size: 1rem;
     }
     .intro-article{
-        font-size: .7em;
+        font-size: 1rem;
     }
 }
