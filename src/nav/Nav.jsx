@@ -27,7 +27,7 @@ export default function Nav() {
   return (
     
     <div className='nav-links'>
-      <button className={display?'option-btn option-btn-color-black': 'option-btn option-btn-color-white'} onClick={ChangeDiplayProp}>{display? <ImCancelCircle/> : <FiMenu/>}</button>
+      <button className={display?'option-btn option-btn-color-black': 'option-btn option-btn-color-white'} onClick={ChangeDiplayProp}>{display? <ImCancelCircle color='black'/> : <FiMenu/>}</button>
 
       <div className={display ?"nav-items-container" : 'nav-items-disp-none'}>
         <Link to= "/">
@@ -51,7 +51,7 @@ export default function Nav() {
         </HashLink>
         
           <Link to={'/donation-page'}>
-              <OptionItem optionItem={CheckInput.IsLangugeEnglish(languge) ? 'DONATE NOW' : `አሁኑኑ ይለግሱ`}/>
+              <OptionItem optionItem={CheckInput.IsLangugeEnglish(languge) ? 'DONATE NOW' : `ይለግሱ`}/>
           </Link>
         
       </div>

@@ -64,6 +64,10 @@ WHO ARE WE? contains [VISON, MISSION, VALUES] etc */
     position: relative;
     background-color: transparent;
     }
+    .who-arewe-container,
+    .nav-options{
+        border-bottom: .1rem solid darkblue;
+    }
     /* .nav-options:nth-last-child(){
         margin-bottom: 0;
     } */
@@ -146,4 +150,11 @@ so elminate margine on only this first option item */
 /* the link is found on each option items under a li tag */
 a{
     color: var(--textBlue);
+}
+
+@media screen and (max-width: 450px){
+    .who-arewe-container,
+    .nav-options{
+        border-bottom: .1rem solid darkblue;
+    }
 }

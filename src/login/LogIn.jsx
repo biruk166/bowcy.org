@@ -8,8 +8,9 @@ export default function LogIn() {
     <div className='log-in-page-main-container'>
         <div className='login-items-container'>
             <h1 className='login'>LOGIN</h1>
-            <input className='user-email-password' type="email" name="" id="" placeholder='Enter Your Email'/>
-            <input className='user-email-password' type="password" name="" id="" placeholder='Enter Your PassWord'/>
+            <label> Enter Your Email  <br /> <input className='user-email-password' type="email"/> </label>
+            <label>Enter Your Password <br /> <input className='user-email-password' type="password"/></label>
+           
             <Link to={'/admin-page'} smooth> <GenericBtn name={'LOGIN'}/> </Link>
             <h4 className='wrong-password'>Wrong PassWord or user name!!</h4>
         </div>

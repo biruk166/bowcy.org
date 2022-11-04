@@ -11,20 +11,26 @@
     gap: 1.5rem;
 }
 .login-items-container{
-    border: .3rem solid black;
+    border: .3rem solid rgb(87, 85, 85);
+    box-shadow: .1rem .1rem .5rem black;
     border-radius: 1rem;
     padding: 1rem;
     height: 30rem;
 }
 .login{
     font-size: 3rem;
+    border-bottom: .5rem solid black;
 }
+/* style for email and password input for the user */
 .user-email-password{
     width: 40rem;
-    height: 3rem;
+    height: 4rem;
     font-size: 1.5rem;
     border-radius: .5rem;
+    outline: none;
 }
+
+/* ! style for the text that displayes wrong password */
 .wrong-password{
     color: red;
     display: none;

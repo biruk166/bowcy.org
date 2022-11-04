@@ -79,16 +79,42 @@
 @media screen and (max-width:950.5px){
     .intro-cards-sec-one,
     .intro-cards-sec-two{
-        flex-wrap: wrap;
+        flex-wrap:  nowrap;
         gap: 2rem;
     }
     .ethio-flag{
         height: max-content;
+        display: none;
     }
     .ethio-flag-smaller{
         height: 18rem !important;
     }
+    .intro-cards{
+        position: relative;
+    }
 }
+
+@media screen and (max-width:722.5px){
+    .intro-cards-sec-one,
+    .intro-cards-sec-two{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: fit-content;
+        align-self: center;
+        gap: 1rem;
+    }
+    .ethio-flag{
+        height: max-content;
+        display: none;
+    }
+    .ethio-flag-smaller{
+        height: 18rem !important;
+    }
+    .intro-cards{
+        position: relative;
+    }
+}
+
 @media screen and (max-width:450.5px){
     .ethio-flag-smaller{
         height: 42rem !important;

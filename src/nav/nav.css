@@ -50,6 +50,7 @@
         text-align: left;
         gap: 3em;
         position: absolute;
+        box-shadow: .1rem .1rem .5rem black;
     }
 }
 @media screen and (max-width: 450px){
@@ -65,8 +66,8 @@
     }
 
     .nav-items-container{
-        width: 100vh;
-        min-height: 100vh;
+        width: max-content;
+        height: fit-content;
         padding: 7em 3em 2em 3em;
         border-radius: 0 0 1em 1em;
         background-color: var(--navBarWhite);
@@ -75,6 +76,7 @@
         text-align: left;
         gap: 3em;
         position: absolute;
+        box-shadow: .1rem .1rem .5rem black;
     }
 }
 

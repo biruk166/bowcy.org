@@ -11,7 +11,9 @@
     cursor: pointer;
     box-shadow: none;
     border: transparent solid .5rem;
+    box-shadow: .1rem .1rem .5rem black;
     transition: border 200ms ease-in-out;
+    overflow: hidden;
 }
 
 /* a styling for the yellow intro card. since its color is differnt */
@@ -85,6 +87,7 @@
     }
     .intro-card-image{
         width: 10em;
+        margin: 0;
     }
     .title{
         font-size: 1.5em;
@@ -101,11 +104,13 @@
 
 @media screen and (max-width:950.5px){
     .intro-card-container{
+        padding: 3rem;
         width: 10rem;
-        height: 5rem;
+        height: 10rem;
+        border-radius: .5em;
     }
     .intro-card-image{
-        display: none;
+        width: 4em;
     }
     .title{
         font-size: 1em;
