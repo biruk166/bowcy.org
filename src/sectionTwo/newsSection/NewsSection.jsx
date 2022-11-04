@@ -31,11 +31,15 @@ export default function NewsSection() {
     
     <div id='news-events-card'>
     <div className='news-section-container'>
+      <h1 style={{textAlign:'center', fontSize:'3rem'}}>NEWS/EVENTS</h1>
+      <div className='main-news-sec-container'>
         <div className='news-section'>
             <News NewsTittle={title} newsArticle={article} newsPublishedDate={' 2022/12/22'}/>
             <News NewsTittle={title} newsArticle={article} newsPublishedDate={' 2022/12/22'}/>
             <News NewsTittle={title} newsArticle={article} newsPublishedDate={' 2022/12/22'}/>  
         </div>
+      </div>
+        
 
         <div className='navigation'>
             <div onClick={decrment}><GrPrevious className='icon-prv' size={30} /></div>

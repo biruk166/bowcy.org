@@ -87,7 +87,10 @@
 
 .partners{
     padding-top: 5rem;
-    width: inherit;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 99%;
 }
 .partners > h1{
     width: 100%;
@@ -108,3 +111,10 @@
 .partner-container > img{
     width: 20rem;
 }
+
+@media(max-width:500px){
+    .partner-container > img{
+        width: 7rem;
+    }
+}
+

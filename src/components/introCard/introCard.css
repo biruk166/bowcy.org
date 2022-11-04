@@ -101,16 +101,16 @@
 
 @media screen and (max-width:950.5px){
     .intro-card-container{
-        width: 10rem;
-        height: 5rem;
+        width: 13rem;
+        height: 7rem;
     }
     .intro-card-image{
         display: none;
     }
     .title{
-        font-size: 1em;
+        font-size: 1rem;
     }
     .intro-article{
-        font-size: .7em;
+        font-size: 1rem;
     }
 }

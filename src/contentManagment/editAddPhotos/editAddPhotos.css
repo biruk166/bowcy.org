@@ -19,3 +19,38 @@
     grid-template-columns: auto auto auto;
     gap: .6rem;
 }
+
+.delete-photo-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.edit-add-photos-main-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+}
+
+.img-input-holder{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+.img-input-holder input {
+    height: 3rem;
+    font-weight: bold;
+    font-family: var(---btnFontStyleOxReg);
+    border: .2rem solid rgb(184, 159, 23);
+}
+.album-name{
+    margin: 1rem;
+    height: 4rem;
+    width: 40rem;
+    font-size: 2rem;
+    border: .3rem solid black;
+}
+

@@ -12,6 +12,7 @@
     background-color: beige;
     color: var(--textBlue);
     font-family: var(---btnFontStyleOxReg);
+    box-shadow: 1rem 1rem 1rem rgb(88, 83, 83);
 }
 
 .building-img-container{
@@ -56,7 +57,7 @@
     color: var(--txtYellow);  
 }
 
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 880px){
     .our-org-container{
         flex-direction: column;
         width: 40rem;
