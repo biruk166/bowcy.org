@@ -6,14 +6,16 @@
 
 .this-my-story-container{
     display: flex;
+    padding: 1em;
     flex-wrap: nowrap;
     justify-content: center;
-    width: 100rem;
+    width: 98rem;
     height: min-content;
     background-color: white;
     color:var(--introCardClrDrkBlue);
     font-family: var(---btnFontStyleOxReg);
-    box-shadow: 1rem 1rem 1rem rgb(88, 83, 83);;
+    box-shadow: .1rem .1rem 1rem rgb(88, 83, 83), -.1rem -.1rem 1rem rgb(88, 83, 83);
+    margin-bottom: 2rem;
 }
 .person-img-container{
     width: 40rem;
@@ -24,7 +26,6 @@
     width: inherit;
     height: inherit;
     object-fit:cover;
-    border-radius: 1.5rem;
 }
 .title-and-story{
     display: flex;
@@ -55,11 +56,12 @@
 @media screen and (max-width: 880px){
     .this-my-story-container{
         flex-direction: column;
-        width: 40rem;
+        width: 35rem;
         background-color: #f3ebeb;
     }
     .person-img-container{
         height: 20rem;
+        width: 100%;
     }
     .person-img{
         border-radius: 0;

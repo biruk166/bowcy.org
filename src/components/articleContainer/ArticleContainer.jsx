@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import CheckInput from '../../functionalUtility/CheckInput'
+import { HashLink } from 'react-router-hash-link'
 
 import './articleContainer.css'
 import NewsSection from '../../sectionTwo/newsSection/NewsSection'
@@ -51,12 +52,11 @@ export default function ArticleContainer(props){
   const [languge, setLanguge] = useState('english')
 
   return (
-    <dive>
+    <div id='article-container'>
       <div className='detail-article-container'>
         <h1 className='detail-title'>{CheckInput.IsLangugeEnglish(languge) ? title : titleAmh} </h1>
         <div className='detail-articles'>
-            <p>{CheckInput.IsLangugeEnglish(languge) ? story + story : storyAmh + storyAmh} </p>
-            <p>{CheckInput.IsLangugeEnglish(languge) ? story + story : storyAmh + storyAmh} </p>
+            <p>{CheckInput.IsLangugeEnglish(languge) ? story + story + story + story : storyAmh + storyAmh} </p>
         </div>
         <a className='contact-author' href="#">{CheckInput.IsLangugeEnglish(languge) ? `CONTACT AUTHOR` : `ደራሲን ያግኙ`} </a>
       </div>
@@ -64,7 +64,7 @@ export default function ArticleContainer(props){
         <h3>PUBLISHED DATE: 11/27/2022</h3>
         <h3>AUTHOR NAME: Biruk Cherie</h3> 
       </div>
-    </dive>
+    </div>
     
   )
 }

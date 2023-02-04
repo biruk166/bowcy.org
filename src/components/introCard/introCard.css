@@ -1,11 +1,12 @@
 /* The parent container of intro card */
 .intro-card-container{
+    display: flex;
     width: 18rem;
     height: 30rem;
     padding: 2em;
     border-radius: 1.5em;
     text-overflow: clip;
-    display: flex;
+    
     flex-direction: column;
     justify-content: center;
     cursor: pointer;
@@ -104,17 +105,14 @@
 
 @media screen and (max-width:950.5px){
     .intro-card-container{
-<<<<<<< HEAD
         padding: 3rem;
         width: 10rem;
         height: 10rem;
         border-radius: .5em;
-=======
-        width: 13rem;
-        height: 7rem;
->>>>>>> refs/remotes/origin/main
+        height: 8rem;
     }
     .intro-card-image{
+        display: none;
         width: 4em;
     }
     .title{

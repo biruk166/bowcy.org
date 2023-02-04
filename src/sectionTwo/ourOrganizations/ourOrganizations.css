@@ -9,10 +9,10 @@
     height: min-content;
     padding: 1em;
     margin-top: 2rem;
-    background-color: beige;
+    /* background-color: beige; */
     color: var(--textBlue);
     font-family: var(---btnFontStyleOxReg);
-    box-shadow: 1rem 1rem 1rem rgb(88, 83, 83);
+    box-shadow: .1rem .1rem 1rem rgb(88, 83, 83), -.1rem -.1rem 1rem rgb(88, 83, 83);
 }
 
 .building-img-container{
@@ -60,8 +60,11 @@
 @media screen and (max-width: 880px){
     .our-org-container{
         flex-direction: column;
-        width: 40rem;
+        width: 35rem;
         /* padding: 0 5rem; */
+    }
+    .home-page-img{
+        height: 20rem;
     }
     .building-img-container{
         height: 20rem;
@@ -70,5 +73,8 @@
     .list-of-org-one,
     .list-of-org-two{
         line-height: 2.5rem;
+    }
+    .org-name{
+        font-size: 1.5rem;
     }
 }

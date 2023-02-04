@@ -1,5 +1,6 @@
 import React , {useState} from 'react'
-import { Link } from 'react-router-dom'
+import { Link} from 'react-router-dom'
+import { HashLink } from 'react-router-hash-link';
 import CheckInput from '../../../functionalUtility/CheckInput'
 
 import './news.css'
@@ -20,8 +21,11 @@ export default function News(props) {
             
                 <p className='news-article'> {props.newsArticle} </p>
                 <h4 className='news-pubished-date'> PUBLISHED DATE:{props.newsPublishedDate}</h4>
-                <Link className='learn-more' to={"/news-card-article"}>
-                    <h3> { CheckInput.IsLangugeEnglish(languge) ? `READ MORE` : `ተጨማሪ ያንብቡ`} </h3>
+                <Link className='learn-more' to={"/news-card-article"} smooth>
+                    <HashLink className='learn-more' to={'/news-card-article#article-container'}>
+                        <h3> { CheckInput.IsLangugeEnglish(languge) ? `READ MORE` : `ተጨማሪ ያንብቡ`} </h3>
+                    </HashLink>
+                    
                 </Link>
             </div>
             

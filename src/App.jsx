@@ -1,5 +1,7 @@
 import React from 'react';
 import './App.css';
+import { Route, BrowserRouter as Router, Routes} from 'react-router-dom';
+
 
 import Header from './header/Header';
 import SectionOne from './sectionOne/SectionOne';
@@ -14,8 +16,9 @@ import Admin from './contentManagment/adminPage/Admin';
 import LogIn from './login/LogIn';
 import Donation from './pages/donationPage/Donation';
 import EmailPage from './pages/emailPage/EmailPage';
-import { Route, BrowserRouter as Router, Routes} from 'react-router-dom';
 import Image from './components/image/Image';
+
+
 // admin page materials
 import CMSArticle from './contentManagment/editAddArticle/CMSArticle';
 import EditAddPhotos from './contentManagment/editAddPhotos/EditAddPhotos';
@@ -27,7 +30,7 @@ function App(){
         <Router>
           {/* the scroll top make sure when user navigates to another page.
               it will automaticaly take them to the top of the page  */}
-          <ScrollToTop />
+          
 
           <div className='App'>
             <Header />
@@ -44,6 +47,7 @@ function App(){
                 <Route path='donation-page' element={<Donation/>} />
                 <Route path='research-page' element={<ResearchPage />} />
                 <Route path='report-page' element={<ReportPage />} />
+
                 <Route path='admin-page' element={<Admin />} >
                     <Route path='edit-add-article' element={<CMSArticle/>}/>
                     <Route path='edit-add-photos' element={<EditAddPhotos />}  />
@@ -59,6 +63,7 @@ function App(){
 
             <NewsLetter />
           </div>
+          <ScrollToTop />
         </Router>
         
      
