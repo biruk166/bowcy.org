@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/bowcy.org/static/css/main.ea39c759.css",
+    "main.js": "/bowcy.org/static/js/main.a7127d6d.js",
+    "static/media/homepage.jpg": "/bowcy.org/static/media/homepage.34e408160788a7dee6c0.jpg",
+    "static/media/globe.gif": "/bowcy.org/static/media/globe.6673819a36eadb8dbef8.gif",
+    "static/media/kids.jpg": "/bowcy.org/static/media/kids.c548165efe92540ac8fb.jpg",
+    "static/media/building.jpg": "/bowcy.org/static/media/building.ed0c457bceb065a15afa.jpg",
+    "static/media/studying.gif": "/bowcy.org/static/media/studying.b7f50cd9a29fbf7969c2.gif",
+    "static/media/women_impowerment.gif": "/bowcy.org/static/media/women_impowerment.ce0aad68441e3a0bc539.gif",
+    "static/media/person.jpg": "/bowcy.org/static/media/person.6cf8216abcc0b68b2051.jpg",
+    "static/media/gift.jpg": "/bowcy.org/static/media/gift.17e9bb4437a551dec1dc.jpg",
+    "static/media/women.jpg": "/bowcy.org/static/media/women.a9dd3eebdbda79f90800.jpg",
+    "static/media/kid.jpg": "/bowcy.org/static/media/kid.d1fef4932484140478ed.jpg",
+    "static/media/unwomen.svg": "/bowcy.org/static/media/unwomen.d7e7f7becb61e9ecf54d500435321fcd.svg",
+    "static/media/unfpa.png": "/bowcy.org/static/media/unfpa.b3c6582764de3fb6c4f3.png",
+    "static/media/ethiopian.jpg": "/bowcy.org/static/media/ethiopian.72451f65515527ac9583.jpg",
+    "static/media/heart.png": "/bowcy.org/static/media/heart.fd9aa43a82ff117410c3.png",
+    "static/media/voting.png": "/bowcy.org/static/media/voting.13eda3e564b21dc88f34.png",
+    "static/media/women_protection.png": "/bowcy.org/static/media/women_protection.c2cc658f3207cdf6545c.png",
+    "static/media/youth_impowerment.png": "/bowcy.org/static/media/youth_impowerment.b5f91dd7a1ce7de619da.png",
+    "static/media/finance.png": "/bowcy.org/static/media/finance.81ca4319004310c72925.png",
+    "static/media/pdf.png": "/bowcy.org/static/media/pdf.002a5d7131f19c3eca77.png",
+    "static/media/unicef.svg": "/bowcy.org/static/media/unicef.22fdf3d0d447b710be0f18f33496f01a.svg",
+    "index.html": "/bowcy.org/index.html",
+    "static/media/counterSlice": "/bowcy.org/static/media/counterSlice.21806e46eb4a37190995",
+    "main.ea39c759.css.map": "/bowcy.org/static/css/main.ea39c759.css.map",
+    "main.a7127d6d.js.map": "/bowcy.org/static/js/main.a7127d6d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ea39c759.css",
+    "static/js/main.a7127d6d.js"
+  ]
+}
