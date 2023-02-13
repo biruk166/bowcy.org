@@ -8,7 +8,7 @@ app.use(express.json());
 
 app.listen(3001, ()=>
 {
-    console.log(`server is running at`);
+    console.log(`server is running at port 3000`);
 })
 
 //connects to mysql database
@@ -20,32 +20,24 @@ var con = mysql.createConnection(
     database: "bowcydatabase"
 });
 
-//shows connection status
+//shows connection status 
+// connects to the database
 con.connect(function(err)
 {
     if (err) throw err;
-    console.log("Connected!");
 });
 
-app.get('/', (req, res)=>
-{
-     res.send("<h1> still running <h1>");
-})
 
+// post the article into the database
 app.post('/publishArticle', (req, res)=>{
     const data = req.body.data;
     console.log(data.engArticle);
-    res.send('Data recived');
-    con.query(`INSERT INTO newsarticledb (EnglishAvailable, EnglishTitle, EnglishArticle, 
-                                          AmharicAvailable, AmharicTitle, AmharicArticle, 
-                                          PublisherEmail, ArticleImage, DeleteStatus, HideStatus,
-                                          PublishedDate, PublisherNameEnglish, 
-                                          PublisherNameAmharic) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)`,
-                                          [data.engAvailabe, data.engTitle, data.engArticle,
-                                           data.amhAvailable, data.amhTitle, data.amhArticle, 
-                                           data.pubEmail, data.articleImgDirectory, data.delStatus,
-                                           data.hidStatus, data.pubDate, data.pubEnglishName,
-                                           data.pubAmharicName],(err, resp)=>{
+    res.send('Data recieved');
+    con.query(`INSERT INTO bowcyarticle (publisherEmail, publisherName, publishedDate, articleImageDirectory, 
+                                        articleTitle, article) VALUES(?, ?, ?, ?, ?, ? )`,
+                                          [data.publisherEmail, data.publisherName, data.publishedDate,
+                                           data.articleImgDirectory, data.articleTitle, data.article],
+                                           (err, resp)=>{
                                                if(err){
                                                    console.log(err.message);
                                                    console.log('data not added');
@@ -54,15 +46,22 @@ app.post('/publishArticle', (req, res)=>{
                                                    console.log('data added');
                                                    console.log(resp);
                                                }
-                                           }
-    )
+                                           })
+})
+
+// fetches all the article from the database and sends it
+app.post('/getAllArticle', (req, res)=>{
+    var data = con.query(`SELECT * FROM bowcyarticle`);
+    console.log(req.body.data);
+    console.log(data);
+    res.send('recived');
 })
 
 
+// to add newsletter subscribers to the data base
 app.post('/createNewsLetter', (req, res)=>
 {
     const email = req.body.email;
-    const isactive = 0;
     const sqlResult = con.query(`SELECT subscriberEmail FROM newslettersubscribers WHERE subscriberEmail=?`,[email]);
     if(sqlResult.values[0] != null)
     {
@@ -81,8 +80,8 @@ app.post('/createNewsLetter', (req, res)=>
 })
 
 
-//sends the donation form
-app.post('/getDonationForm', (req, res)=>{
-    res.send('<NewsSection />');
-})
+
 //con.query(`INSERT INTO newslettersubscribers (subscriberId, subscriberEmail) VALUES(${id}, 'biruk1@ksu.edu')`);
+
+
+

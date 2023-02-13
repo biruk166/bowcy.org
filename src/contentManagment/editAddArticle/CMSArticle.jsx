@@ -1,182 +1,74 @@
 import React,{useState} from 'react'
 import axios from 'axios'
 import CheckInput from '../../functionalUtility/CheckInput'
-
 import './editAddArticle.css'
+
 import {GrNext, GrPrevious} from 'react-icons/gr'
 import EditAddArticle from './EditAddArticle'
-import PublishBtn from '../buttons/PublishBtn'
-import Cancel from '../buttons/Cancel'
+import UniversalButton from '../buttons/UniversalButton'
+
+// text editor
+import ReactQuill from 'react-quill'
+import 'react-quill/dist/quill.snow.css';
 
 
 export default function CMSArticle() {
 
-    // the confirmation page that will be displayed when the user
-    // clicks publish
-    const [confPageDisp, setConfPageDisp] = useState(false);
-    const confirmationPageStyle = {
-                        fontSize:'1.5rem',
-                        display: confPageDisp ? 'flex':'none',
-                        flexDirection:'column',
-                        alignItems:'center',
-                        gap:'1rem',
-                        padding:'1rem',
-                        border:'solid .5rem'               
-    }
-
-
-
-    const [isEmailIncorrect, setIsEmailIncorrect] = useState(false);
-
-    const [isAmharicNameIncorrect, setIsAmharicNameIncorrect] = useState(false);
-    const [isAmharicTitleIncorrect, setIsAmharicTitleIncorrect] = useState(false);
-    const [isAmharicArticleIncorrect, setIsAmharicArticleIncorrect] = useState(false);
+    var modules = {
+        toolbar: [
+          [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+          ['bold', 'italic', 'underline','strike', 'blockquote'],
+          [{'list': 'ordered'}, {'list': 'bullet'}, {'indent': '-1'}, {'indent': '+1'}],
+          ['link', 'image', {'color':[]}, {'font': []}],
+          ['clean']
+        ],
+      }
     
-    const [isEnglishNameIncorrect, setIsEnglishNameIncorrect] = useState(false);
-    const [isEnglishTitleIncorrect, setIsEnglishTitleIncorrect] = useState(false);
-    const [isEnglishArticleIncorrect, setIsEnglishArticleIncorrect] = useState(false);
+      var formats = [
+        'header',
+        'bold', 'italic', 'underline', 'strike', 'blockquote',
+        'list', 'bullet', 'indent',
+        'link', 'image', 'color'
+      ]
+
+
+
 
     // the following function will check if the given input values
     // if they are set correctly it will be used to send the data to the back
     const [fixErrorMessage, setFixErrorMessage] = useState(false);
-    function CheckInputAccuracy()
-    {
-        if(isEmailIncorrect == true){
-            setFixErrorMessage(true);
-            setConfPageDisp(false);
-            return false;
-        }
-        if(showAmharicInput && showEnglishInput)
-        {
-            if(isAmharicNameIncorrect == false || isAmharicArticleIncorrect == false || isAmharicTitleIncorrect == false){
-                setFixErrorMessage(true);
-                setConfPageDisp(false);
-                return false;
-            }
-            if(isEnglishNameIncorrect == false || isEnglishArticleIncorrect == false || isEnglishTitleIncorrect == false){
-                setFixErrorMessage(true);
-                setConfPageDisp(false);
-                return false;
-            }
-            else{
-                setFixErrorMessage(false);
-                setConfPageDisp(true);
-                return true;
-            }
-        }
-        else
-        {
-            if(showAmharicInput)
-            {
-                if(isAmharicNameIncorrect == false || isAmharicArticleIncorrect == false || isAmharicTitleIncorrect == false)
-                {
-                    setFixErrorMessage(true);
-                    setConfPageDisp(false);
-                    return false;
-                }
-                setFixErrorMessage(false);
-                setConfPageDisp(true);
-                return true; 
-            }
-            if(showEnglishInput)
-            {
-                if(isEnglishNameIncorrect == false || isEnglishArticleIncorrect == false || isEnglishTitleIncorrect == false)
-                {
-                    setFixErrorMessage(true);
-                    setConfPageDisp(false);
-                    return false;
-                }
-                setFixErrorMessage(false);
-                setConfPageDisp(true);
-                return true;
-            }
-        } 
-    }
 
-    // the following use state and function will decide
-    // if the amharic article or english articl area is visible
-    // it will also set if amharic or english is available to the
-    // date-base so when user change article languge will be based on
-    // if the article exists in the prefered languge
-    const [showAmharicInput, setAmharicInput] = useState(false);
-    const [showEnglishInput, setEnglishInput] = useState(false);
-    function displayEngAmh(val){
-        if(val == 'none'){
-            setAmharicInput(false);
-            setEnglishInput(false);
-            setEnglishAvailable(0);
-            setAmharicAvailable(0);
-        }
-        else{
-            if(val == 'english'){
-                setAmharicInput(false);
-                setEnglishInput(true);
-                setEnglishAvailable(1);
-                setAmharicAvailable(0);
-            }
-            if(val == 'amharic'){
-                setAmharicInput(true);
-                setEnglishInput(false);
-                setEnglishAvailable(0);
-                setAmharicAvailable(1);
-            }
-            if(val == 'both'){
-                setAmharicInput(true);
-                setEnglishInput(true);
-                setEnglishAvailable(1);
-                setAmharicAvailable(1);
-            }
-        }
-    }
-
-
-    const [newsCounter, setCounter] = useState(1)
-    const [contentTobePublished, setContentTobePublished] = useState('');
-
-    //general status for the article or story
-    const [articleImageDirectory, setArticleImageDirectory] = useState('');
+    const [article, setArticle] = useState('');
+    const [articleTitle, setArticleTitle] = useState('')
+    const [publisherName, setPublisherName] = useState('Amhara BcWCSA Office');
     const [publisherEmail, setPublisherEmail] = useState('');
-    const [deleteStatus, setDeleteStatus] = useState(0);
-    const [hideStatus, setHideStatus] = useState(0);
-    const [publishedDate, setPublishedDate]= useState(CheckInput.GenrateDate());
+    const [publishedDate]= useState(CheckInput.GenrateDate());
+    const [articleImageDirectory, setArticleImageDirectory] = useState('');
 
-    //everything for the english version of the article
-    const [englishAvailable, setEnglishAvailable] = useState(0);
-    const [englishTitle, setEnglishTitle] = useState('');
-    const [englishArticle, setEnglishArticle] = useState('');
-    const [englishArticleDirectory, setEnglishArticleDirectory] = useState('');
-    const [publisherEnglishName, setPublisherEnglishName] = useState('')
+    const [newsCounter, setCounter] = useState(1);
+    
 
-    //eveything for the amharic setion of the article
-    const [amharicAvailable, setAmharicAvailable] = useState(0);
-    const [amharicTitle, setAmharicTitle] = useState('');
-    const [amharicArticle, setAmharicArticle] = useState('');
-    const [amharicArticleDirectory, setAmharicArticleDirectory] = useState('');
-    const [publsiherAmharicName, setPublsiherAmharicName] = useState('');
-
-    // this data will be sent to the server so it can be stored in the data-base
+    function consolLog(){
+        console.log('article = ' + article);
+        console.log('article title = ' + articleTitle);
+        console.log('publisher name = '+ publisherName);
+        console.log('publsiher email = ' + publisherEmail);
+        console.log('published date = ' + publishedDate);
+        console.log('article image directory = ' + articleImageDirectory);
+    }
+    
     const articleInputData = {
-                            articleImgDirectory: articleImageDirectory,
-                            pubEmail: publisherEmail,
-                            delStatus: deleteStatus,
-                            hidStatus: hideStatus,
-                            pubDate: publishedDate,
+        publisherEmail: 'biruk@ksu.edu',
+        publisherName: publisherName,
+        publishedDate: publishedDate,
 
-                            engAvailabe: englishAvailable,
-                            engTitle: englishTitle,
-                            engArticle: englishArticle,
-                            engArticleDirectory: englishArticleDirectory,
-                            pubEnglishName: publisherEnglishName,
-
-                            amhAvailable: amharicAvailable,
-                            amhTitle: amharicTitle,
-                            amhArticle: amharicArticle,
-                            amhArticleDirectory: amharicArticleDirectory,
-                            pubAmharicName: publsiherAmharicName,
-
+        articleImageDirectory: 'biruk/file/name/this.img',
+        articleTitle: articleTitle,
+        article: article,
     }
 
-    // sends the publishers article to the server so it can be saved in the data-base;
+
+    //sends the publishers article to the server so it can be saved in the data-base;
     function SendArticleDataToServer(){
         axios.post('http://localhost:3001/publishArticle', {
             data: articleInputData,
@@ -194,6 +86,16 @@ export default function CMSArticle() {
         setCounter(newsCounter - 1);
     }
 
+    // gets all articles from the database
+    function GetAllArticle(){
+        axios.post('http://localhost:3001/getAllArticle', {
+            data: 'allArticle',
+        }).then((response) =>{
+            console.log('articles received');
+            console.log(response.data);
+        })
+    }
+
 
   return (
     <div className='main-cms-edit-add-article-container'>
@@ -201,13 +103,8 @@ export default function CMSArticle() {
         <div className='current-article-container'>
             <EditAddArticle />
             <EditAddArticle />
-            <EditAddArticle />
-            <EditAddArticle />
-            <EditAddArticle />
-            <EditAddArticle />
-            <EditAddArticle />
-            <EditAddArticle />
         </div>
+        
 
         <div className='navigation'>
             <div onClick={decrment}><GrPrevious className='icon-prv' size={30} /></div>
@@ -216,133 +113,34 @@ export default function CMSArticle() {
         </div>
         <hr />
 
-        <div className='new-text-image-container'>
-            <div style={{border:'.1rem solid', 
-                        padding:'1rem',
-                        display:'flex',
-                        flexDirection:'column',
-                        alignItems:'center'}}>
-                <input type="file" name="imageUpload"
-                    onChange={(e)=>{setArticleImageDirectory(e.currentTarget.value);}}/>
 
-                <div style={{display:'flex', 
-                            alignItems:'center',
-                            gap:'1rem',
-                            fontSize:'1.5rem'}}>
-                    <h3>Choose in what language you are publishing</h3>
-                    <select name="articleStory"
-                        onChange={(e)=>{console.log(e.currentTarget.value);
-                                        let val = e.currentTarget.value;
-                                        console.log(publishedDate);
-                                        displayEngAmh(val);
-                                        }}>
-                        <option value="none">Choose Language</option>
-                        <option value="english">English</option>
-                        <option value="amharic">Amharic</option>
-                        <option value="both">Both</option>
-                    </select>           
-                </div>
-                
-                <div style={{display:'flex', 
-                            alignItems:'center',
-                            gap:'1rem',
-                            fontSize:'1.5rem'}}>
-                    <h3 htmlFor="">Choose what you are publishing</h3>
-                    <select name="articleStory" onChange={(e)=>{setContentTobePublished(e.currentTarget.value);
-                                                                console.log(contentTobePublished);}}>
-                        <option value="none">Choose type</option>                                           
-                        <option value="article">Story</option> 
-                        <option value="story">Article</option>
-                    </select>
-                </div>
-                <input className='add-new-author-email' type="email"  placeholder='Please add your email | የእርስዎን ኢሜይል ያስገቡ ' 
-                        onChange={(e)=>{ setPublisherEmail(e.currentTarget.value);
-                                         CheckInput.VerifyEmailFormat(publisherEmail) ? setIsEmailIncorrect(false):setIsEmailIncorrect(true);
-                                 }}/>
-                            <h2 style={ {color:'red', display: isEmailIncorrect ? 'block':'none'}}>Invalid email   |  የማይሰራ ኢሜይል</h2>
-            </div>
-            
-            
-            {/* the folowing input will handel the amharic version of the article data if no input is given
-            it will set amharicArticleAvailable to 0 which means False */}
-            <div className='new-text-image-container' style={{display: showAmharicInput ? 'flex' : 'none'}}>
-
-                <h1> የጽሑፉን አማርኛ ሥሪት ከዚህ በታች አስቀምጠው </h1>
-                <input className='add-new-author-email' type="email" placeholder='ስምህን በአማርኛ አስገባ' 
-                    onChange={(e)=>{ setPublsiherAmharicName(e.currentTarget.value);
-                                    setIsAmharicNameIncorrect(CheckInput.CheckWordLength(publsiherAmharicName, 2));
-                                    }}/>
-                 <h2 style={ {color:'red', display: isAmharicNameIncorrect ? 'none':'block'}}> እባክህ ስምህን በአማርኛ አስገባ (ሙሉ ስምህን አስቀምጥ) </h2>
-
-                <textarea style={{borderColor:'gold'}} className='add-new-title' cols="30" rows="10" placeholder='የአማርኛ ርእስህን እዚህ አስገባ'
-                    onChange={(e)=>{ setAmharicTitle(e.currentTarget.value);
-                                    setIsAmharicTitleIncorrect(CheckInput.CheckWordLength(amharicTitle, 4));
-                                    }}>
-                </textarea>
-                <h2 style={ {color:'red', display: isAmharicTitleIncorrect ? 'none':'block'}}> ርዕሱ ከ 4 ቃላት በላይ መሆን አለበት!!</h2>
-
-                <textarea className='add-new-article' cols="30" rows="10" placeholder='የአማርኛ ጽሑፍህን እዚህ አስገባ'
-                    onChange={(e)=>{ setAmharicArticle(e.currentTarget.value);
-                                    setIsAmharicArticleIncorrect(CheckInput.CheckWordLength(amharicArticle, 5));
-                                    }}>
-                </textarea>
-                <h2 style={ {color:'red', display: isAmharicArticleIncorrect ? 'none':'block'}}> የጽሁፉ ቃል ብዛት ከ200 በላይ መሆን አለበት።</h2>
-            </div>
-
-            <br/><br />
-
-            {/* the folowing input will handel the english version of the article data if no input is given
-                it will set englishArticleAvailable to 0 which means False */}
-        <div className='new-text-image-container' style={{display: showEnglishInput?'flex' : 'none'}}>
-
-                <h1>PUT THE ENGLISH VERSION OF THE ARTICLE BELOW </h1>
-                <input className='add-new-author-email' type="email"placeholder='Enter your name in English'
-                    onChange={(e)=>{ setPublisherEnglishName(e.currentTarget.value);
-                                    setIsEnglishNameIncorrect(CheckInput.CheckWordLength(publisherEnglishName, 2)); 
-                                    }}/>
-                            <h2 style={ {color:'red',display: isEnglishNameIncorrect ? 'none':'block'}}> Please insert your name in english (Put your full name)</h2>
-
-                <textarea className='add-new-title' cols="30" rows="10" placeholder='Enter Your English Title Here'
-                    onChange={(e)=>{ setEnglishTitle(e.currentTarget.value); 
-                                    setIsEnglishTitleIncorrect(CheckInput.CheckWordLength(englishTitle, 4));
-                                    }}>
-                </textarea>
-                            <h2 style={ {color:'red', display: isEnglishTitleIncorrect ? 'none':'block'}}> Your article-title word count must be over 4 words</h2>
-
-                <textarea className='add-new-article' cols="30" rows="10" placeholder='Enter Your English Article Here'
-                    onChange={(e)=>{ setEnglishArticle(e.currentTarget.value);
-                                    setIsEnglishArticleIncorrect(CheckInput.CheckWordLength(englishArticle, 4));
-                                    }}>
-                </textarea>
-                            <h2 style={ {color:'red', display: isEnglishArticleIncorrect ? 'none':'block'}}> Your article word count must be over 5</h2>
-            </div>
-
-            <div style={confirmationPageStyle}>
-                <h2 style={{color:'red'}}>WARNING!!!</h2>
-                <h1 style={{color:'gold'}}> Are you sure you want to publish the content{contentTobePublished}? </h1>
-                    {/* <ul>
-                        <li style={{listStyle:'square'}}>You dont have the Amharic version of the {contentTobePublished}</li>
-                        <li style={{listStyle:'square'}}>Check if you are publishing the right image for the {contentTobePublished}</li>
-                        <li style={{listStyle:'square'}}>You are publishing {contentTobePublished}</li>
-                    </ul> */}
-                    <div style={{display:'flex', gap:'1rem'}}>
-                        <div onClick={()=>{
-                            SendArticleDataToServer();
-                            setConfPageDisp(false);
-                            }}> <PublishBtn /> </div>
-                        <div onClick={()=>{setConfPageDisp(false);}}> <Cancel /> </div>
-                    </div>
-                        
-            </div>
+        <div className='author-info'>
+            <label> Email Addess <br /> <input className='add-new-author-email' type="email" onChange={(e)=>{setPublisherEmail(e.target.value)}}/></label> <br /><br />
+            <label> Author Name <br /><input className='add-new-author-email' type="text" onChange={(e)=>{setPublisherName(e.target.value)}}/></label> <br /><br />
+            <label> Article Tittle</label><br />
+            <textarea className='add-new-author-email' cols="30" rows="10" onChange={(e)=>{setArticleTitle(e.target.value)}}></textarea>
         </div>
 
-        <div style={{display:confPageDisp ? 'none':'flex'}} className='publish-cancel-btn-container'>
-           <div onClick={()=>{CheckInputAccuracy();
-                             }}> <PublishBtn /> </div>
-            {/* <div> <Cancel /> </div>  */}
+
+        <div className='react-quill'>
+            <ReactQuill size={12} modules={modules} formats={formats} theme="snow" value={article} onChange={setArticle} />
         </div>
-        <h1 style={{color:'red',display: fixErrorMessage ? 'block':'none'}}> Article/Story can not be published. Fix the above erorr's!!!!!</h1>
+        <div className='article-style' dangerouslySetInnerHTML={{__html: article}}/>
+
+
+        <div onClick={()=>{SendArticleDataToServer()}}>
+           <UniversalButton color={'white'} bgColor={'blue'} name={'Publish'}></UniversalButton> 
+        </div>
         
+        <div onClick={()=>{GetAllArticle()}}>
+            <UniversalButton color={'white'} bgColor={'black'} name={'Get All Article'}></UniversalButton>
+        </div>
+        
+        <div style={{backgroundColor:'lightgray', padding:'4rem', width:'700px'}}>
+            <h2 style={{color:'red'}}>are you sure?</h2>
+            <UniversalButton color={'white'} bgColor={'green'} name={'Yes'} />
+            <UniversalButton color={'white'} bgColor={'red'} name={'No'} />
+        </div>
     </div>
   )
 }

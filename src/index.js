@@ -2,11 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App.jsx';
-import { store } from './stateManagment/frontEnd/store';
+
+// for state managment
+import { store } from './stateManagment/store';
 import { Provider } from 'react-redux';
 
-export default function Index
-() {
+function Index() {
   return (
     <div>
         <React.StrictMode>

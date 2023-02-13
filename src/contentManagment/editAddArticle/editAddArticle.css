@@ -1,8 +1,8 @@
 .edit-add-article-container{
-    margin: 2rem;
-    width: 30rem;
+    margin: 1rem;
+    width: 20rem;
     padding: 2rem;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,36 +18,73 @@
 }
 .current-article-container{
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    width: 60%;
 }
-.new-text-image-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-}
+
+
 .add-new-author-email{
-    width: 50rem;
+    width: 700px;
     height: 3rem;
-    font-size: 1.5rem;
-}
-.add-new-article,
-.add-new-title{
-    padding: 1rem;
-    width: 100vh;
-    resize: vertical;
-}
-.add-new-article{
-    min-height: 50rem;
     font-size: 2rem;
 }
-.add-new-title{
-    height: 5rem;
-    font-size: 2.5rem;
+.react-quill{
+    max-width: 700px;
+    padding: .5rem;
+    line-height: 1.42;
+    overflow-y: auto;
 }
-.publish-cancel-btn-container{
-    display: flex;
-    gap: .5rem;
+
+.author-info > label{
+    font-size: 2rem;
+}
+
+
+.article-style{
+    overflow: auto;
+    max-width: 700px;
+    font-size: 1.7rem;
+    padding: .2rem 5rem;
+    background-color: #f3ebeb;
+    color: #041E43;
+}
+.article-style > h2,
+.article-style > h1{
+    text-align: center;
+    text-decoration: underline;
+}
+
+.article-style > h3{
+    text-align: center;
+}
+.article-style > ul,
+.article-style > ol{
+    background-color: #f5f0f0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    list-style: decimal !important;
+}
+.article-style > ul > li,
+.article-style > ol >  li{
+    border-bottom: .1rem solid #fffefe;
+    margin: .5rem 0;
+    width: contain;
+}
+.article-style > ul > li > a,
+.article-style > ol >  li > a,
+.article-style > p > a{
+    color: rgb(14, 14, 121);
+}
+.article-style > p > img{
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+@media (max-width: 600px){
+    .article-style{
+        font-size: 1.3rem;
+        padding: .2rem 2rem;
+    }
+    .article-style > ul{
+        padding-top: .5rem;
+        padding-bottom: .5rem;
+    }
 }
