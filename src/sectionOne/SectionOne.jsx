@@ -2,7 +2,6 @@ import React from 'react'
 import WhoAreWeDisc from './whoAreWeDisc/WhoAreWeDisc'
 import IntroCardsSection from './introCardsSection/IntroCardsSection'
 import ThisIsMyStory from '../sectionTwo/thisIsMyStory/ThisIsMyStory'
-import ArticleContainer from '../components/articleContainer/ArticleContainer'
 
 const story = "In the past 3 years we have thought over \
                300 women personal finance this resulted\

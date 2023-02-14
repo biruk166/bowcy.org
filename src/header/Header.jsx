@@ -13,7 +13,10 @@ export default function Header() {
         <div className='header-main-nav' style={style}>
           <MainNav />  
         </div>
-        <OrgNameAndBtns />
+        <div>
+          <OrgNameAndBtns />
+        </div>
+        
     </div>
   )
 }

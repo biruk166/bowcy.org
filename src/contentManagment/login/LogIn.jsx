@@ -1,7 +1,7 @@
 import React from 'react'
 import {HashLink as Link} from 'react-router-hash-link'
 import './logIn.css'
-import GenericBtn from '../components/genericBtn/GenericBtn'
+import GenericBtn from '../../components/genericBtn/GenericBtn'
 
 export default function LogIn() {
   return (

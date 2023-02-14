@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
-import CheckInput from '../../functionalUtility/CheckInput'
-import ResearchReportComponent from '../../components/researchReportComponent/ResearchReportComponent'
-import NewsSection from '../../sectionTwo/newsSection/NewsSection'
+import CheckInput from '../functionalUtility/CheckInput'
+import ResearchReportComponent from '../components/researchReportComponent/ResearchReportComponent'
+import NewsSection from '../sectionTwo/newsSection/NewsSection'
 
 const report={
     display:'flex',

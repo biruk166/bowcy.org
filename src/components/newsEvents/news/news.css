@@ -48,7 +48,7 @@
     color: var(--introCardClrDrkBlue) !important;
 }
 
-@media screen and (max-width: 1240px){
+@media (max-width: 1240px){
     .news-card-container{
         width: 25rem;
     }
@@ -60,13 +60,15 @@
     }
     
 }
-@media screen and (max-width: 857.5px){
+@media (max-width: 857.5px){
     .news-article{
         display: none;
     }
     .news-card-container{
-        width: 15rem;
+        width: 16rem;
         border-radius: 0 0 .2rem .2rem ;
+        box-shadow: .2rem .2rem .2rem rgb(82, 79, 79);
+        
     }
     .news-card-image{
         border-radius: 0rem;
@@ -76,9 +78,9 @@
     }
     .learn-more,
     .news-title{
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
     .news-pubished-date{
-        font-size: .7rem;
+        font-size: .8rem;
     }
 }

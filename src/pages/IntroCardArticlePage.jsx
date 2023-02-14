@@ -1,6 +1,6 @@
 import React from 'react'
-import IntroCardsSection from '../../sectionOne/introCardsSection/IntroCardsSection'
-import ArticleContainer from '../../components/articleContainer/ArticleContainer'
+import IntroCardsSection from '../sectionOne/introCardsSection/IntroCardsSection'
+import ArticleContainer from '../components/articleContainer/ArticleContainer'
 
 
 const style = {

@@ -1,29 +1,36 @@
 import React from 'react';
 import './App.css';
+
+// navigation
 import { Route, BrowserRouter as Router, Routes} from 'react-router-dom';
 
 
 import Header from './header/Header';
 import SectionOne from './sectionOne/SectionOne';
 import SectionTwo from './sectionTwo/SectionTwo';
-import Home from './pages/home/Home';
 import ScrollToTop from './ScrollToTop';
-import IntroCardArticlePage from './pages/introCardArticlePage/IntroCardArticlePage';
-import NewsLetter from './components/newsLetter/NewsLetter';
-import NewsArticlePage from './pages/newsArticlePage/NewsArticlePage';
-import Vision from './pages/vision/Vision';
 import Admin from './contentManagment/adminPage/Admin';
-import LogIn from './login/LogIn';
-import Donation from './pages/donationPage/Donation';
-import EmailPage from './pages/emailPage/EmailPage';
+import LogIn from './contentManagment/login/LogIn';
 import Image from './components/image/Image';
-
 
 // admin page materials
 import CMSArticle from './contentManagment/editAddArticle/CMSArticle';
 import EditAddPhotos from './contentManagment/editAddPhotos/EditAddPhotos';
-import ReportPage from './pages/reportPage/ReportPage';
-import ResearchPage from './pages/researchPage/ResearchPage';
+
+// pages
+import DonationPage from './pages/DonationPage';
+import EmailPage from './pages/EmailPage';
+import HomePage from './pages/HomePage';
+import IntroCardArticlePage from './pages/IntroCardArticlePage';
+import NewsArticlePage from './pages/NewsArticlePage';
+import ReportPage from './pages/ReportPage';
+import ResearchPage from './pages/ResearchPage';
+import VisionPage from './pages/VisionPage';
+
+// indpendent page content
+import Footer from './pages/footer/Footer';
+
+
 
 function App(){
   return (
@@ -37,14 +44,14 @@ function App(){
             {/* =route for the website to navigate through differnt pages. */}
             <div className='route-content'>
               <Routes>
-                <Route path="/*" element={ <Home /> }/>
+                <Route path="/*" element={ <HomePage /> }/>
                 <Route path="login" element={ <LogIn />} />
-                <Route path='vision' element={<Vision />} />
+                <Route path='vision' element={<VisionPage />} />
                 <Route path="section-one" element={ <SectionOne/>} />
                 <Route path="section-two" element={ <SectionTwo/>} />
                 <Route path='intro-cards-article-page' element={<IntroCardArticlePage />} />
                 <Route path='/email-page' element={<EmailPage />} />
-                <Route path='donation-page' element={<Donation/>} />
+                <Route path='donation-page' element={<DonationPage/>} />
                 <Route path='research-page' element={<ResearchPage />} />
                 <Route path='report-page' element={<ReportPage />} />
 
@@ -61,7 +68,7 @@ function App(){
             </div>
 
 
-            <NewsLetter />
+            <Footer />
           </div>
           <ScrollToTop />
         </Router>

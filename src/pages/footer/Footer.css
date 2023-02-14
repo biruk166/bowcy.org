@@ -71,6 +71,7 @@
     justify-content: space-around;
 }
 .footer-nav{
+    display: none;
     color: white;
     display: flex;
     align-items: flex-start;

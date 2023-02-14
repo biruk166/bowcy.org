@@ -10,7 +10,7 @@ import LottiFiles from '../../assets/LottiFiles';
 
 const article = 'We protect children from domestic abuse and harmfull traditional practices ';
 const articleAmh = `ህጻናትን ከቤት ውስጥ ጥቃት እና ጎጂ ልማዳዊ ድርጊቶች እንጠብቃለን`;
-
+const numbOfCards = [1,2,3,4];
 export default function IntroCardsSection() {
     function print(){console.log("i am clikced")}
       const [display, setdisplay] = useState(false);
@@ -24,6 +24,8 @@ export default function IntroCardsSection() {
           </div> 
           <div className='intro-cards'>
               <div className='intro-cards-sec-one' >
+                {/* {numbOfCards.map(x=> <Link to={'/intro-cards-article-page'}><IntroCardBlue title={ CheckInput.IsLangugeEnglish(languge) ? 'CHILDREN RIGHT' : ` የሀጻናት ሙብት`} image={LottiFiles.heart} article={article} /></Link>)} */}
+
                 <Link to={'/intro-cards-article-page'}> <IntroCardBlue title={ CheckInput.IsLangugeEnglish(languge) ? 'CHILDREN RIGHT' : ` የሀጻናት ሙብት`} image={LottiFiles.heart} article={article} /> </Link>
                 <Link to={'/intro-cards-article-page'}> <IntroCardBlue title={ CheckInput.IsLangugeEnglish(languge) ? 'YOUTH EMPOWERMENT' : `ዎጣጦችን ማብርታታት `} image={LottiFiles.youth_impowerment} article={article} /></Link>
                 <Link to={'/intro-cards-article-page'}> <IntroCardBlue title={ CheckInput.IsLangugeEnglish(languge) ? 'PARTICIPATION OF YOUTH' : `ዎጣጦችን ማሳተፍ`} image={LottiFiles.partcipation} article={article}/> </Link>

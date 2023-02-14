@@ -94,7 +94,7 @@
     }
 }
 
-@media screen and (max-width:722.5px){
+@media(max-width:722.5px){
     .intro-cards-sec-one,
     .intro-cards-sec-two{
         display: grid;

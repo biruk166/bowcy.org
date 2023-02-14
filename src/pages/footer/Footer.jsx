@@ -3,7 +3,7 @@ import {HashLink as Link} from 'react-router-hash-link'
 import CheckInput from '../../functionalUtility/CheckInput'
 
 import axios from 'axios'
-import './newsLetter.css'
+import './Footer.css'
 import {AiOutlineMail,AiOutlineSmile,AiOutlineFacebook,AiOutlineTwitter} from 'react-icons/ai'
 import {SiMessenger} from 'react-icons/si'
 import unicef from './unicef.svg'
@@ -11,7 +11,7 @@ import unwomen from './unwomen.svg'
 import unfpa from './unfpa.png'
 const iconSize = 22;
 
-export default function NewsLetter() {
+export default function Footer() {
     const [newsLetterEmail, setNewsLetterEmail] = useState({
         email:"",
         invalid: false,
@@ -84,7 +84,7 @@ export default function NewsLetter() {
             {/* <div style={{display: donationFormDiplay ? 'block': 'none'}}> <DonationForm/> </div> */}
         </div>
 
-        <div className='footer-nav-container'>
+        {/* <div className='footer-nav-container'>
             <ul className='footer-nav'>
                 <a href='#'> {CheckInput.IsLangugeEnglish(languge) ? `VOLUNTEER`: `በፍካድኘት የሳታፉ`}<AiOutlineSmile size={iconSize}/></a>
                 <Link to={'/email-page'}> {CheckInput.IsLangugeEnglish(languge) ? `EMAIL US` : `ኢሜል ይላኩልን`} <AiOutlineMail size={iconSize}/></Link>
@@ -95,11 +95,11 @@ export default function NewsLetter() {
                 <a href='#'> { CheckInput.IsLangugeEnglish(languge) ? `TWITTER` : `ትዊተር`}  <AiOutlineTwitter size={iconSize}/></a>
                 <a href='#'>{CheckInput.IsLangugeEnglish(languge) ? `MESSENGER` : `መልእክተኛ`} <SiMessenger size={iconSize}/></a>
             </ul> 
-        </div>
+        </div> */}
         
         
         <div className='partners'>
-            <h1>{ CheckInput.IsLangugeEnglish(languge) ? `SEE OUR PARTNERS` : `አጋሮቻችንን ይመልከቱ`}</h1>
+            <h1>{ CheckInput.IsLangugeEnglish(languge) ? `OUR PARTNERS` : `አጋሮቻችንን`}</h1>
         </div>
 
         <div className='partner-container'>

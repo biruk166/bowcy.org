@@ -11,10 +11,10 @@
     justify-content: center;
     width: 98rem;
     height: min-content;
-    background-color: white;
+    background-color: rgb(244, 240, 234);
     color:var(--introCardClrDrkBlue);
     font-family: var(---btnFontStyleOxReg);
-    box-shadow: .1rem .1rem 1rem rgb(88, 83, 83), -.1rem -.1rem 1rem rgb(88, 83, 83);
+    /* box-shadow: .1rem .1rem 1rem rgb(88, 83, 83), -.1rem -.1rem 1rem rgb(88, 83, 83); */
     margin-bottom: 2rem;
 }
 .person-img-container{
@@ -46,7 +46,7 @@
 .btn-container{
     display: flex;
     justify-content: end;
-    background-color: white;
+    background-color: rgb(244, 240, 234);
     align-items: baseline;
     gap: 1rem;
     padding: 2rem;

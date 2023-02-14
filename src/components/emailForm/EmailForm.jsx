@@ -51,15 +51,18 @@ export default function EmailForm() {
           </select>
 
           <input className='sender-email' type="text" placeholder='Enter your full name here' required onChange={(e)=> {setName(e.target.value)}}/>
-          <h4 style={{color:'red', display: isNameCorrect ? 'block' : 'none'}}>name can't be empty</h4>
 
           <input className='sender-email' type="email" placeholder='Enter your email here' required onChange={(e)=>{ setEmail(e.target.value)} }/>
-          <h4 style={{color:'red', display: isEmailCorrect ? 'block' : 'none'}}>email format is wrong Ex: myemail@gmail.com</h4>
-          
           <textarea className='message-input' type="text" required onChange={(e)=>{setMessage(e.target.value)}}/>
-          <h4 style={{color:'red', display: isMessageCorrect ? 'block' : 'none'}}>Message box can't be empty or under 3 words</h4>
 
-          <h4 style={{color:'green', display: sucess ? 'none' : 'none'}}>THANK YOU FOR YOUR EMAIL. WE WILL CONTACT YOU AS SOON AS POSSIBLE</h4>
+
+          <div>
+              <h4 style={{color:'red', display: isNameCorrect ? 'block' : 'none'}}>name can't be empty</h4>
+              <h4 style={{color:'red', display: isEmailCorrect ? 'block' : 'none'}}>email format is wrong Ex: myemail@gmail.com</h4>
+              <h4 style={{color:'red', display: isMessageCorrect ? 'block' : 'none'}}>Message box can't be empty or under 3 words</h4>
+              <h4 style={{color:'green', display: sucess ? 'none' : 'none'}}>THANK YOU FOR YOUR EMAIL. WE WILL CONTACT YOU AS SOON AS POSSIBLE</h4>
+          </div>
+          
           <button className='send-btn' onClick={()=>{ isInputCorrect();}}> SEND </button>
       </div>
     </div> 

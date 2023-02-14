@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
-import CheckInput from '../../functionalUtility/CheckInput'
-import ResearchReportComponent from '../../components/researchReportComponent/ResearchReportComponent'
-import NewsSection from '../../sectionTwo/newsSection/NewsSection'
+import CheckInput from '../functionalUtility/CheckInput'
+import ResearchReportComponent from "../components/researchReportComponent/ResearchReportComponent"
+import NewsSection from '../sectionTwo/newsSection/NewsSection'
 
 
 const report={
@@ -18,7 +18,7 @@ const styles = {
 }
 
 export default function ResearchPage() {
-    const [languge, setLanguge] = useState('english')
+    const [languge] = useState('english')
     const [cardCount, setCardCount] = useState(5)
 
 

@@ -25,7 +25,6 @@ export default function News(props) {
                     <HashLink className='learn-more' to={'/news-card-article#article-container'}>
                         <h3> { CheckInput.IsLangugeEnglish(languge) ? `READ MORE` : `ተጨማሪ ያንብቡ`} </h3>
                     </HashLink>
-                    
                 </Link>
             </div>
             

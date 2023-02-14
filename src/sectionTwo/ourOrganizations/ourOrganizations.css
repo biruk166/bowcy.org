@@ -12,7 +12,8 @@
     /* background-color: beige; */
     color: var(--textBlue);
     font-family: var(---btnFontStyleOxReg);
-    box-shadow: .1rem .1rem 1rem rgb(88, 83, 83), -.1rem -.1rem 1rem rgb(88, 83, 83);
+    background-color: rgb(244, 240, 234);
+    /* box-shadow: .1rem .1rem 1rem rgb(88, 83, 83), -.1rem -.1rem 1rem rgb(88, 83, 83); */
 }
 
 .building-img-container{

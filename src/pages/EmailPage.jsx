@@ -1,6 +1,6 @@
 import React from 'react'
-import EmailForm from '../../components/emailForm/EmailForm'
-import NewsSection from '../../sectionTwo/newsSection/NewsSection'
+import EmailForm from '../components/emailForm/EmailForm'
+import NewsSection from '../sectionTwo/newsSection/NewsSection'
 
 
 export default function EmailPage() {
